@@ -1,0 +1,59 @@
+K 25
+svn:wc:ra_dav:version-url
+V 91
+/maplezhang.CourseSystem/!svn/ver/5/trunk/CourseSystem/src/org/javatribe/courseSystem/model
+END
+Course.java
+K 25
+svn:wc:ra_dav:version-url
+V 103
+/maplezhang.CourseSystem/!svn/ver/5/trunk/CourseSystem/src/org/javatribe/courseSystem/model/Course.java
+END
+Student.java
+K 25
+svn:wc:ra_dav:version-url
+V 104
+/maplezhang.CourseSystem/!svn/ver/5/trunk/CourseSystem/src/org/javatribe/courseSystem/model/Student.java
+END
+LeaveApplication.java
+K 25
+svn:wc:ra_dav:version-url
+V 113
+/maplezhang.CourseSystem/!svn/ver/5/trunk/CourseSystem/src/org/javatribe/courseSystem/model/LeaveApplication.java
+END
+Notice.java
+K 25
+svn:wc:ra_dav:version-url
+V 103
+/maplezhang.CourseSystem/!svn/ver/5/trunk/CourseSystem/src/org/javatribe/courseSystem/model/Notice.java
+END
+Message.java
+K 25
+svn:wc:ra_dav:version-url
+V 104
+/maplezhang.CourseSystem/!svn/ver/5/trunk/CourseSystem/src/org/javatribe/courseSystem/model/Message.java
+END
+Session.java
+K 25
+svn:wc:ra_dav:version-url
+V 104
+/maplezhang.CourseSystem/!svn/ver/5/trunk/CourseSystem/src/org/javatribe/courseSystem/model/Session.java
+END
+StuOrgSession.java
+K 25
+svn:wc:ra_dav:version-url
+V 110
+/maplezhang.CourseSystem/!svn/ver/5/trunk/CourseSystem/src/org/javatribe/courseSystem/model/StuOrgSession.java
+END
+SecretProtectQuestion.java
+K 25
+svn:wc:ra_dav:version-url
+V 118
+/maplezhang.CourseSystem/!svn/ver/5/trunk/CourseSystem/src/org/javatribe/courseSystem/model/SecretProtectQuestion.java
+END
+Organization.java
+K 25
+svn:wc:ra_dav:version-url
+V 109
+/maplezhang.CourseSystem/!svn/ver/5/trunk/CourseSystem/src/org/javatribe/courseSystem/model/Organization.java
+END

@@ -1,0 +1,58 @@
+10
+
+dir
+12
+https://vip.svnspot.com/maplezhang.CourseSystem/trunk/CourseSystem/res
+https://vip.svnspot.com/maplezhang.CourseSystem
+
+
+
+2014-12-11T01:10:25.332403Z
+12
+qingfei1994
+
+
+svn:special svn:externals svn:needs-lock
+
+
+
+
+
+
+
+
+
+
+
+e6662c2e-2a6c-2827-de34-49c806a1aece
+
+drawable
+dir
+
+drawable-hdpi
+dir
+
+drawable-ldpi
+dir
+
+drawable-mdpi
+dir
+
+drawable-xhdpi
+dir
+
+drawable-xxhdpi
+dir
+
+layout
+dir
+
+values
+dir
+
+values-v11
+dir
+
+values-v14
+dir
+

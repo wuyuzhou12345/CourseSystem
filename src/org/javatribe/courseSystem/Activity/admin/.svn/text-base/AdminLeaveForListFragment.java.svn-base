@@ -1,0 +1,117 @@
+package org.javatribe.courseSystem.Activity.admin;
+
+import java.util.ArrayList;
+import java.util.HashMap;
+import java.util.List;
+import java.util.Map;
+
+import org.javatribe.courseSystem.R;
+import org.javatribe.courseSystem.Activity.Util.SerializableMap;
+
+
+
+
+import org.javatribe.courseSystem.model.LeaveApplication;
+
+import android.app.Activity;
+import android.os.Bundle;
+import android.support.v4.app.Fragment;
+import android.view.LayoutInflater;
+import android.view.View;
+import android.view.ViewGroup;
+import android.widget.AdapterView;
+import android.widget.AdapterView.OnItemClickListener;
+import android.widget.Button;
+import android.widget.EditText;
+import android.widget.ListView;
+import android.widget.SimpleAdapter;
+import android.widget.Toast;
+
+/**管理员查看请假条界面
+ * @author qing
+ *
+ */
+
+
+public class AdminLeaveForListFragment extends Fragment implements OnItemClickListener{
+public  final static String TAG="LeaveForListFragment";
+	private ListView fall_lv_leaveForList;
+	private SimpleAdapter adapter;
+	private List<Map<String,Object>> list;
+	
+
+	
+	@Override
+	public View onCreateView(LayoutInflater inflater, ViewGroup container,
+			Bundle savedInstanceState) {
+		// TODO Auto-generated method stub
+		View root=inflater.inflate(R.layout.fragment_admin_leave_for_list, null);
+		list=convertToList();
+		adapter=new SimpleAdapter(getActivity(),list,R.layout.fragment_admin_leave_for_list_item,new String[]{"event","askForLeavePersonCount"},new int[]{R.id.falf_tv_content,R.id.falf_tv_total});
+		 fall_lv_leaveForList=(ListView)root.findViewById(R.id. fall_lv_leaveForList);
+		 fall_lv_leaveForList.setAdapter(adapter);
+		 fall_lv_leaveForList.setOnItemClickListener(this);
+		 return root;
+	}
+	/*
+	 *数据从数据库中取得的。。。
+	 */
+	public List<Map<String,Object>> convertToList()
+	{
+		List<Map<String,Object>> list=new ArrayList<Map<String,Object>>();
+		Map<String,Object> map=new HashMap<String,Object>();
+		map.put("event", "今晚java部落交流会，请大家务必准时参加，主讲人准备主题。");
+		map.put("askForLeavePersonCount",new Integer(3));
+		String[] sessionNames={"项目组","前端组"};
+		String[][] personName={{"陈海晴","周露颖"},{"陈欣"}};
+		map.put("sessionNames",sessionNames);
+		map.put("personName", personName);
+		LeaveApplication leaveForApplication;
+		Map<Integer,List<LeaveApplication>> reasons=new HashMap<Integer,List<LeaveApplication>>();
+		
+		
+		
+		for(int i=0;i<personName.length;i++)
+		{
+		 List<LeaveApplication> reasonlist=new ArrayList<LeaveApplication>();	
+			for(int j=0;j<personName[i].length;j++)
+			{
+				leaveForApplication=new LeaveApplication();
+//				leaveForApplication.setName(personName[i][j]);
+//				leaveForApplication.setReason("回家");
+//				leaveForApplication.setSession(sessionNames[i]);
+		
+				reasonlist.add(leaveForApplication);
+			}
+			reasons.put(new Integer(i),reasonlist);
+		}
+		
+	
+		map.put("reasons", reasons);
+		list.add(map);
+		
+		
+		
+		return list;
+		
+	}
+	//响应点击事件
+	@Override
+	public void onItemClick(AdapterView<?>  parent, View view, int position, long id) {
+		// TODO Auto-generated method stub
+	
+			Bundle info=new Bundle();
+			//信息从数据库获得。
+			SerializableMap map=new SerializableMap(list.get(position));
+
+		info.putSerializable("info",map);
+			AdminLeaveForDetailFragment fragment=new AdminLeaveForDetailFragment();
+			fragment.setArguments(info);
+			getActivity().getSupportFragmentManager().beginTransaction().replace(R.id.content_frame,fragment).addToBackStack(null).commit();
+			
+			
+			
+	}
+	
+	
+}

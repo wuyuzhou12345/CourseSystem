@@ -1,0 +1,137 @@
+K 25
+svn:wc:ra_dav:version-url
+V 101
+/maplezhang.CourseSystem/!svn/ver/12/trunk/CourseSystem/src/org/javatribe/courseSystem/Activity/admin
+END
+AdminLeaveForListFragment.java
+K 25
+svn:wc:ra_dav:version-url
+V 131
+/maplezhang.CourseSystem/!svn/ver/5/trunk/CourseSystem/src/org/javatribe/courseSystem/Activity/admin/AdminLeaveForListFragment.java
+END
+UserDetailFragment.java
+K 25
+svn:wc:ra_dav:version-url
+V 124
+/maplezhang.CourseSystem/!svn/ver/5/trunk/CourseSystem/src/org/javatribe/courseSystem/Activity/admin/UserDetailFragment.java
+END
+AdminBoardManageFragment.java
+K 25
+svn:wc:ra_dav:version-url
+V 130
+/maplezhang.CourseSystem/!svn/ver/9/trunk/CourseSystem/src/org/javatribe/courseSystem/Activity/admin/AdminBoardManageFragment.java
+END
+AddUserSectionFragment.java
+K 25
+svn:wc:ra_dav:version-url
+V 128
+/maplezhang.CourseSystem/!svn/ver/5/trunk/CourseSystem/src/org/javatribe/courseSystem/Activity/admin/AddUserSectionFragment.java
+END
+AdminNoticeDetailFragment.java
+K 25
+svn:wc:ra_dav:version-url
+V 131
+/maplezhang.CourseSystem/!svn/ver/5/trunk/CourseSystem/src/org/javatribe/courseSystem/Activity/admin/AdminNoticeDetailFragment.java
+END
+AdminOrgMemberOnePersonInfoWithSessionFragment.java
+K 25
+svn:wc:ra_dav:version-url
+V 153
+/maplezhang.CourseSystem/!svn/ver/11/trunk/CourseSystem/src/org/javatribe/courseSystem/Activity/admin/AdminOrgMemberOnePersonInfoWithSessionFragment.java
+END
+AdminIdTransferFragment.java
+K 25
+svn:wc:ra_dav:version-url
+V 129
+/maplezhang.CourseSystem/!svn/ver/5/trunk/CourseSystem/src/org/javatribe/courseSystem/Activity/admin/AdminIdTransferFragment.java
+END
+AdminOrgMemberOnePersonIndoWithNoSessionFragment.java
+K 25
+svn:wc:ra_dav:version-url
+V 155
+/maplezhang.CourseSystem/!svn/ver/11/trunk/CourseSystem/src/org/javatribe/courseSystem/Activity/admin/AdminOrgMemberOnePersonIndoWithNoSessionFragment.java
+END
+AdminLeaveForDetailFragment.java
+K 25
+svn:wc:ra_dav:version-url
+V 133
+/maplezhang.CourseSystem/!svn/ver/5/trunk/CourseSystem/src/org/javatribe/courseSystem/Activity/admin/AdminLeaveForDetailFragment.java
+END
+AdminLeaveForPersonalDetailFragment.java
+K 25
+svn:wc:ra_dav:version-url
+V 141
+/maplezhang.CourseSystem/!svn/ver/5/trunk/CourseSystem/src/org/javatribe/courseSystem/Activity/admin/AdminLeaveForPersonalDetailFragment.java
+END
+UserAuditFragment.java
+K 25
+svn:wc:ra_dav:version-url
+V 123
+/maplezhang.CourseSystem/!svn/ver/5/trunk/CourseSystem/src/org/javatribe/courseSystem/Activity/admin/UserAuditFragment.java
+END
+AdminNoticeSearchFragment.java
+K 25
+svn:wc:ra_dav:version-url
+V 131
+/maplezhang.CourseSystem/!svn/ver/9/trunk/CourseSystem/src/org/javatribe/courseSystem/Activity/admin/AdminNoticeSearchFragment.java
+END
+AdminMenuFragment.java
+K 25
+svn:wc:ra_dav:version-url
+V 123
+/maplezhang.CourseSystem/!svn/ver/5/trunk/CourseSystem/src/org/javatribe/courseSystem/Activity/admin/AdminMenuFragment.java
+END
+AdminDeptMemberFragment.java
+K 25
+svn:wc:ra_dav:version-url
+V 130
+/maplezhang.CourseSystem/!svn/ver/11/trunk/CourseSystem/src/org/javatribe/courseSystem/Activity/admin/AdminDeptMemberFragment.java
+END
+UserAuditListFragment.java
+K 25
+svn:wc:ra_dav:version-url
+V 127
+/maplezhang.CourseSystem/!svn/ver/5/trunk/CourseSystem/src/org/javatribe/courseSystem/Activity/admin/UserAuditListFragment.java
+END
+AddUserFragment.java
+K 25
+svn:wc:ra_dav:version-url
+V 121
+/maplezhang.CourseSystem/!svn/ver/5/trunk/CourseSystem/src/org/javatribe/courseSystem/Activity/admin/AddUserFragment.java
+END
+AdminTransferDetailFragment.java
+K 25
+svn:wc:ra_dav:version-url
+V 133
+/maplezhang.CourseSystem/!svn/ver/5/trunk/CourseSystem/src/org/javatribe/courseSystem/Activity/admin/AdminTransferDetailFragment.java
+END
+AdminDeptOptionFragment.java
+K 25
+svn:wc:ra_dav:version-url
+V 129
+/maplezhang.CourseSystem/!svn/ver/5/trunk/CourseSystem/src/org/javatribe/courseSystem/Activity/admin/AdminDeptOptionFragment.java
+END
+UserListFragment.java
+K 25
+svn:wc:ra_dav:version-url
+V 122
+/maplezhang.CourseSystem/!svn/ver/5/trunk/CourseSystem/src/org/javatribe/courseSystem/Activity/admin/UserListFragment.java
+END
+AdminMainActivity.java
+K 25
+svn:wc:ra_dav:version-url
+V 124
+/maplezhang.CourseSystem/!svn/ver/12/trunk/CourseSystem/src/org/javatribe/courseSystem/Activity/admin/AdminMainActivity.java
+END
+AdminMyManageOrgFragment.java
+K 25
+svn:wc:ra_dav:version-url
+V 130
+/maplezhang.CourseSystem/!svn/ver/9/trunk/CourseSystem/src/org/javatribe/courseSystem/Activity/admin/AdminMyManageOrgFragment.java
+END
+UserAuditDetailFragment.java
+K 25
+svn:wc:ra_dav:version-url
+V 129
+/maplezhang.CourseSystem/!svn/ver/5/trunk/CourseSystem/src/org/javatribe/courseSystem/Activity/admin/UserAuditDetailFragment.java
+END

@@ -1,0 +1,59 @@
+K 25
+svn:wc:ra_dav:version-url
+V 88
+/maplezhang.CourseSystem/!svn/ver/5/trunk/CourseSystem/src/org/javatribe/courseSystem/db
+END
+StudentLeaveApplicationSDDao.java
+K 25
+svn:wc:ra_dav:version-url
+V 122
+/maplezhang.CourseSystem/!svn/ver/5/trunk/CourseSystem/src/org/javatribe/courseSystem/db/StudentLeaveApplicationSDDao.java
+END
+DBSDHelper.java
+K 25
+svn:wc:ra_dav:version-url
+V 104
+/maplezhang.CourseSystem/!svn/ver/5/trunk/CourseSystem/src/org/javatribe/courseSystem/db/DBSDHelper.java
+END
+StudentCourseSDDao.java
+K 25
+svn:wc:ra_dav:version-url
+V 112
+/maplezhang.CourseSystem/!svn/ver/5/trunk/CourseSystem/src/org/javatribe/courseSystem/db/StudentCourseSDDao.java
+END
+StudentMyAssignSDDao.java
+K 25
+svn:wc:ra_dav:version-url
+V 114
+/maplezhang.CourseSystem/!svn/ver/5/trunk/CourseSystem/src/org/javatribe/courseSystem/db/StudentMyAssignSDDao.java
+END
+AdminLeaveApplicationSDDao.java
+K 25
+svn:wc:ra_dav:version-url
+V 120
+/maplezhang.CourseSystem/!svn/ver/5/trunk/CourseSystem/src/org/javatribe/courseSystem/db/AdminLeaveApplicationSDDao.java
+END
+NoticeSDDao.java
+K 25
+svn:wc:ra_dav:version-url
+V 105
+/maplezhang.CourseSystem/!svn/ver/5/trunk/CourseSystem/src/org/javatribe/courseSystem/db/NoticeSDDao.java
+END
+StudentSDDao.java
+K 25
+svn:wc:ra_dav:version-url
+V 106
+/maplezhang.CourseSystem/!svn/ver/5/trunk/CourseSystem/src/org/javatribe/courseSystem/db/StudentSDDao.java
+END
+AdminAndOrganizationSDDao.java
+K 25
+svn:wc:ra_dav:version-url
+V 119
+/maplezhang.CourseSystem/!svn/ver/5/trunk/CourseSystem/src/org/javatribe/courseSystem/db/AdminAndOrganizationSDDao.java
+END
+StudentAndOrganizationSDDao.java
+K 25
+svn:wc:ra_dav:version-url
+V 121
+/maplezhang.CourseSystem/!svn/ver/5/trunk/CourseSystem/src/org/javatribe/courseSystem/db/StudentAndOrganizationSDDao.java
+END

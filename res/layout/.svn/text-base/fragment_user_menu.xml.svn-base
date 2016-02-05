@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical" >
+    <LinearLayout
+        android:id="@+id/mf_ly_logo"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        
+        >
+        <ImageView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            />
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/app_name"
+            />
+   </LinearLayout>
+    <ExpandableListView
+       android:id="@+id/mf_lv_menu"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+       android:layout_below="@id/mf_ly_logo"
+     	android:layout_centerInParent="true"
+  
+      />
+    <Button
+        android:id="@+id/mf_btn_switch"
+        android:layout_width="wrap_content"
+		android:layout_height="wrap_content"
+		android:layout_below="@id/mf_lv_menu"
+		android:text="切换至管理员通道"
+        />
+    
+  
+
+</RelativeLayout>

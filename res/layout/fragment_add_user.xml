@@ -1,0 +1,95 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/f_add_user"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/activity_bg"
+    android:orientation="vertical" >
+
+    <TextView
+        android:id="@+id/fau_tv_add_user"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="center_horizontal" />
+
+    <LinearLayout
+        android:id="@+id/linear_fao02"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="18dp"
+        android:layout_marginRight="18dp"
+        android:orientation="horizontal" >
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:layout_weight="0.13"
+            android:text="@string/user_dept"
+            android:textColor="#0072E3"
+            android:textSize="14sp" >
+        </TextView>
+
+        <Spinner
+            android:id="@+id/fau_sp_user_dept"
+            android:layout_width="119dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="0.42"
+            android:background="#eFFFFFFF"
+            android:entries="@array/user_dept"
+            android:textColor="#000000"
+            android:textSize="14sp" />
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/linear_fao02"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="18dp"
+        android:layout_marginRight="18dp"
+        android:orientation="horizontal" >
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:text="@string/user_name_or_id"
+            android:textColor="#0072E3"
+            android:textSize="14sp" >
+        </TextView>
+
+        <EditText
+            android:id="@+id/fau_et_user_name_or_id"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:background="@drawable/fao_tv_style2"
+            android:ems="10"
+            android:textColor="#000000"
+            android:textSize="14sp" />
+    </LinearLayout>
+
+    <Button
+        android:id="@+id/fau_btn_search"
+        android:layout_width="60dp"
+        android:layout_height="25dp"
+        android:layout_marginBottom="18dp"
+        android:layout_marginLeft="220dp"
+        android:layout_marginTop="20dp"
+        android:background="@drawable/fao_btn_style"
+        android:text="@string/search_btn"
+        android:textColor="#FFFFFF"
+        android:textSize="20sp" />
+
+    <!--
+    <ListView
+        android:id="@+id/fao_lv_org_name"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_marginLeft="18dp"
+        android:layout_marginRight="18dp"
+        android:layout_weight="1"
+        android:drawSelectorOnTop="false" >
+    </ListView>
+    -->
+
+    <requestFocus />
+
+</LinearLayout>

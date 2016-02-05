@@ -1,0 +1,96 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical" >
+    <LinearLayout
+     
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="5dp"
+        android:orientation="horizontal"
+        android:layout_marginTop="10dp">
+<TextView
+     android:textColor="@color/text_color"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+ android:text="@string/my_assign_sender"
+    android:textSize="15sp"/>
+<TextView
+    android:layout_marginLeft="5dp"
+    android:id="@+id/fmad_tv_sender"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+
+    android:textSize="15sp"/>
+</LinearLayout>
+<LinearLayout
+   
+    android:layout_marginTop="10dp"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="5dp"
+        android:orientation="horizontal">
+<TextView
+    android:textColor="@color/text_color"
+   android:textSize="15sp"
+      android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+   android:layout_marginLeft="5dp"
+     android:text="@string/my_assign_title"
+    />
+<TextView
+       android:layout_marginLeft="5dp"
+    android:id="@+id/fmad_tv_title"
+      android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+  android:textSize="15sp"
+     android:text="@string/my_assign_title"
+    />
+</LinearLayout>
+<LinearLayout
+  
+    android:layout_marginTop="10dp"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="5dp"
+        android:orientation="horizontal">
+<TextView
+      android:layout_marginLeft="5dp"
+   android:textSize="15sp"
+      android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+   android:textColor="@color/text_color"
+     android:text="@string/my_assign_content"
+    />
+<EditText
+    
+       android:layout_marginLeft="5dp"
+    android:id="@+id/fmad_et_content"
+      android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+  android:textSize="15sp"
+  android:inputType="textMultiLine"
+     android:text="@string/my_assign_content"
+     android:minLines="3"
+     	android:gravity="left|top"
+     android:background="@drawable/fao_tv_style2"
+    />
+</LinearLayout>
+<LinearLayout
+  
+    android:layout_marginTop="10dp"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="5dp"
+        android:orientation="horizontal"
+        android:gravity="center_horizontal">
+<Button 
+    android:id="@+id/fmad_btn_leaveFor"
+    android:layout_width="100dp"
+    android:layout_height="wrap_content"
+    android:text="@string/my_assign_leave"
+    />
+
+</LinearLayout>
+</LinearLayout>

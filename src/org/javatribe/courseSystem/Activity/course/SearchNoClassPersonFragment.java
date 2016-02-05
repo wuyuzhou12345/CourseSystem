@@ -1,0 +1,123 @@
+package org.javatribe.courseSystem.Activity.course;
+
+
+
+import java.util.ArrayList;
+import java.util.HashMap;
+
+import org.javatribe.courseSystem.R;
+
+
+
+import org.javatribe.courseSystem.ui.MyImageView;
+
+import android.app.AlertDialog;
+import android.app.AlertDialog.Builder;
+import android.app.Dialog;
+import android.content.DialogInterface;
+import android.os.Bundle;
+import android.support.v4.app.Fragment;
+import android.text.Editable;
+import android.util.Log;
+import android.view.LayoutInflater;
+import android.view.View;
+import android.view.View.OnClickListener;
+import android.view.ViewGroup;
+import android.widget.AdapterView;
+import android.widget.AdapterView.OnItemClickListener;
+import android.widget.AdapterView.OnItemSelectedListener;
+import android.widget.Button;
+import android.widget.EditText;
+
+import android.widget.ListView;
+import android.widget.SimpleAdapter;
+import android.widget.Spinner;
+import android.widget.TextView;
+import android.widget.Toast;
+import android.support.v7.widget.GridLayout;
+
+/**检索没有课的所在组织内的成员
+ * 即相当于点击任意一节课，显示此时无课的人的情况，可对其进行任务分配，发送信息
+ * @author zhou
+ *2014/10/12
+ */
+public class SearchNoClassPersonFragment extends Fragment implements OnClickListener{
+
+	GridLayout gridlayoutCourse;
+	Bundle bundle;
+
+	int rowNum;
+	int colNum;
+	int[][] press;
+	private int mCourseCount;
+	private static final String TAG="";
+	public View onCreateView(LayoutInflater inflater, ViewGroup container,
+			Bundle savedInstanceState) {
+		// TODO Auto-generated method stub
+		 View rootView=inflater.inflate(R.layout.fragment_my_course,null);
+		 gridlayoutCourse=(GridLayout)rootView.findViewById(R.id.fmc_gl_course);
+		 mCourseCount=11;
+		 rowNum=mCourseCount+2;//行数等于课时数加1
+		 colNum=6;//上课时间为5天，所以设置了6列
+		 gridlayoutCourse.setRowCount(rowNum+1);
+		 gridlayoutCourse.setColumnCount(colNum);
+		 press=new int[colNum-1][mCourseCount];//实际的所有课数是colNum
+		 for(int i=0;i<mCourseCount*colNum;i++)
+			{
+				GridLayout.Spec rowSpec=GridLayout.spec(i/colNum+1);
+				GridLayout.Spec colSpec=GridLayout.spec(i%colNum);
+				GridLayout.LayoutParams params=new GridLayout.LayoutParams(rowSpec,colSpec);
+				if(i%colNum!=0)
+				{ 
+				MyImageView img=new MyImageView(getActivity());
+				//img.setBackgroundColor(getResources().getColor(R.color.no_class));
+				img.setBackgroundResource(R.drawable.top_bg);
+				img.setRow(i/colNum);
+				img.setCol(i%colNum-1);
+				img.setOnClickListener(this);
+				gridlayoutCourse.addView(img,params);
+				}
+				else{
+					TextView tv=new TextView(getActivity());
+					tv.setText(i/colNum+1+"");
+					gridlayoutCourse.addView(tv,params);
+				}
+			
+				
+			 // params.width=
+				//params.setGravity(Gravity.FILL);//如果不想要拉伸就不要设置gravity.
+		
+			
+			}
+		 return rootView;
+		
+		
+	}
+	@Override
+	public void onClick(View v) {
+		// TODO Auto-generated method stub
+		if(v instanceof MyImageView)//如果点击的是MyImageView的对象
+		{
+			MyImageView myView=(MyImageView)v;
+			int row=myView.getRow();
+			int col=myView.getCol();
+			int press_time=press[col][row];
+			press_time++;
+			if(press_time==1){
+			Bundle bundle=new Bundle();
+			bundle.putInt("weekday",col+1);
+			bundle.putInt("courseNo",row+1);
+			NoClassPersonFragment noClassPersonFragmentnew =new  NoClassPersonFragment();
+			noClassPersonFragmentnew.setArguments(bundle);
+			getActivity().getSupportFragmentManager()
+			.beginTransaction()
+			.replace(R.id.content_frame, noClassPersonFragmentnew).addToBackStack(null)
+			.commit();
+			}
+            
+		}
+	}
+	
+
+}
+

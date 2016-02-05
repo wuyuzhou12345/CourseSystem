@@ -1,0 +1,41 @@
+K 25
+svn:wc:ra_dav:version-url
+V 94
+/maplezhang.CourseSystem/!svn/ver/12/trunk/CourseSystem/src/org/javatribe/courseSystem/adapter
+END
+ListViewAdapter.java
+K 25
+svn:wc:ra_dav:version-url
+V 114
+/maplezhang.CourseSystem/!svn/ver/8/trunk/CourseSystem/src/org/javatribe/courseSystem/adapter/ListViewAdapter.java
+END
+AdminDeptAdapter.java
+K 25
+svn:wc:ra_dav:version-url
+V 115
+/maplezhang.CourseSystem/!svn/ver/5/trunk/CourseSystem/src/org/javatribe/courseSystem/adapter/AdminDeptAdapter.java
+END
+AdminDeptMultibleChoiceAdapter.java
+K 25
+svn:wc:ra_dav:version-url
+V 129
+/maplezhang.CourseSystem/!svn/ver/5/trunk/CourseSystem/src/org/javatribe/courseSystem/adapter/AdminDeptMultibleChoiceAdapter.java
+END
+ExpandableListViewAdapter.java
+K 25
+svn:wc:ra_dav:version-url
+V 124
+/maplezhang.CourseSystem/!svn/ver/5/trunk/CourseSystem/src/org/javatribe/courseSystem/adapter/ExpandableListViewAdapter.java
+END
+AdminMemberExpandableListAdapter.java
+K 25
+svn:wc:ra_dav:version-url
+V 132
+/maplezhang.CourseSystem/!svn/ver/12/trunk/CourseSystem/src/org/javatribe/courseSystem/adapter/AdminMemberExpandableListAdapter.java
+END
+IdExpandableListAdapter.java
+K 25
+svn:wc:ra_dav:version-url
+V 122
+/maplezhang.CourseSystem/!svn/ver/5/trunk/CourseSystem/src/org/javatribe/courseSystem/adapter/IdExpandableListAdapter.java
+END

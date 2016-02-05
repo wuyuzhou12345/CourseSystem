@@ -1,0 +1,64 @@
+package org.javatribe.courseSystem.Activity;
+import java.net.InetAddress;
+import java.net.NetworkInterface;
+import java.net.SocketException;
+import java.util.Enumeration;
+import java.util.List;
+
+import android.app.Activity;
+import android.content.Context;
+import android.net.wifi.WifiInfo;
+import android.net.wifi.WifiManager;
+import android.test.AndroidTestCase;
+import android.util.Log;
+import android.widget.Toast;
+
+public class VideoServiceTest {
+	
+public Activity context;
+
+	    private static final String TAG = "VideoServiceTest";
+	    public VideoServiceTest(Activity activity)
+	    {
+	    	this.context=activity;
+	    }
+	    public void testLocalIpAndMac(){
+	        Toast.makeText(context, "IP: "+getLocalIpAddress()+", MAC: "+getLocalMacAddress(),Toast.LENGTH_SHORT).show();;
+
+	    }
+	    /**
+	     * ��ȡAndroid����IP��ַ
+	     * 
+	     * @return
+	     */
+	    private String getLocalIpAddress() {
+	        try {
+	            for (Enumeration<NetworkInterface> en = NetworkInterface
+	                    .getNetworkInterfaces(); en.hasMoreElements();) {
+	                NetworkInterface intf = en.nextElement();
+	                for (Enumeration<InetAddress> enumIpAddr = intf
+	                        .getInetAddresses(); enumIpAddr.hasMoreElements();) {
+	                    InetAddress inetAddress = enumIpAddr.nextElement();
+	                    if (!inetAddress.isLoopbackAddress()) {
+	                        return inetAddress.getHostAddress().toString();
+	                    }
+	                }
+	            }
+	        } catch (SocketException ex) {
+	            Log.e("WifiPreference IpAddress", ex.toString());
+	        }
+	        return null;
+	    }
+
+	    /**
+	     * ��ȡAndroid����MAC
+	     * 
+	     * @return
+	     */
+	    private String getLocalMacAddress() {
+	        WifiManager wifi = (WifiManager) context.getSystemService(Context.WIFI_SERVICE);
+	        WifiInfo info = wifi.getConnectionInfo();
+	        return info.getMacAddress();
+	    } 
+	}
+

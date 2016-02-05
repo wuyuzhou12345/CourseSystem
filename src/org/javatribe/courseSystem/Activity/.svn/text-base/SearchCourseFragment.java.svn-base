@@ -1,0 +1,128 @@
+package org.javatribe.courseSystem.Activity;
+
+import java.util.ArrayList;
+import java.util.List;
+
+import org.javatribe.courseSystem.R;
+
+
+import org.javatribe.courseSystem.Activity.Util.Validator;
+
+import android.app.AlertDialog;
+import android.content.DialogInterface;
+import android.os.Bundle;
+import android.support.v4.app.Fragment;
+import android.view.LayoutInflater;
+import android.view.View;
+import android.view.View.OnClickListener;
+import android.view.ViewGroup;
+import android.widget.Button;
+import android.widget.EditText;
+import android.widget.Toast;
+
+public class SearchCourseFragment extends Fragment implements OnClickListener{
+
+	Button btnChooseSession;
+	Button btnChooseTime;
+
+	EditText editTextSession;
+	EditText editTextTime;
+	Button btnSearch;
+	private Bundle bundle;
+	private String[] sessionNames={"秘书部","组织部","培训部","外联部","宣传部"};//可选择的部门名称
+	private List chosenSession;
+	
+	@Override
+	public View onCreateView(LayoutInflater inflater, ViewGroup container,
+			Bundle savedInstanceState) {
+		// TODO Auto-generated method stub
+		View rootView=inflater.inflate(R.layout.fragment_search_course, null);
+		
+	
+		btnChooseSession=(Button)rootView.findViewById(R.id.fsc_btn_chooseSession);
+		btnChooseTime=(Button)rootView.findViewById(R.id.fsc_btn_chooseTime);
+		btnSearch=(Button)rootView.findViewById(R.id.fsc_btn_search);
+	
+		editTextSession=(EditText)rootView.findViewById(R.id.fsc_dt_searchSession);
+		editTextTime=(EditText)rootView.findViewById(R.id.fsc_dt_searchTime);
+		btnChooseSession.setOnClickListener(this);
+		btnChooseTime.setOnClickListener(this);
+	btnSearch.setOnClickListener(this);
+		chosenSession=new ArrayList();
+		
+		return rootView;
+	}
+	@Override
+	public void onClick(View v) {
+		// TODO Auto-generated method stub
+		switch(v.getId())
+		{
+		case R.id.fsc_btn_chooseTime:
+		ChooseTimeDialog dialog=new ChooseTimeDialog(getActivity(),this);
+		
+		dialog.show(getActivity().getSupportFragmentManager(),"dialog");
+			break;
+		case R.id.fsc_btn_chooseSession:
+			showChooseSessionDialog();
+			break;
+		case R.id.fsc_btn_search:
+			if(Validator.isEmpty(editTextSession)&&Validator.isEmpty(editTextTime))
+			{
+				Toast.makeText(getActivity(), "查找内容不能为空！", Toast.LENGTH_SHORT).show();
+				
+			}
+			else
+			{
+				getActivity().getSupportFragmentManager()
+				.beginTransaction()
+				.replace(R.id.content_frame, new AfterSearchCourseFragment()).addToBackStack(null)
+				.commit();
+			}
+		}
+	}
+	public void chooseTimeClickPositiveButton(Bundle bundle)//响应选择时间对话框的确定按钮。
+	{
+		String str=bundle.getString("day")+"从"+bundle.getInt("startCourse")+"节"+"到"+bundle.getInt("endCourse")+"节"+bundle.getString("week");
+		editTextTime.setText(str);
+	}
+	public void showChooseSessionDialog()
+	{
+		chosenSession.clear();
+		AlertDialog.Builder builder=new AlertDialog.Builder(getActivity());
+		builder=builder.setTitle("请选择部门");
+		builder.setMultiChoiceItems(sessionNames, null,new DialogInterface.OnMultiChoiceClickListener() {
+				
+			
+			@Override	
+			public void onClick(DialogInterface dialog, int which, boolean isChecked) {
+				// TODO Auto-generated method stub
+					if(isChecked)
+					
+						chosenSession.add(sessionNames[which]);
+			
+					
+					
+				}});
+		builder=builder.setPositiveButton("确定", new DialogInterface.OnClickListener() {
+			
+			@Override
+			public void onClick(DialogInterface dialog, int id) {
+				// TODO Auto-generated method stub
+				String str="";
+				for(int i=0;i<chosenSession.size();i++)
+				{
+					str+=chosenSession.get(i)+",";
+				}
+				str=str.substring(0, str.length()-1);
+				editTextSession.setText(str);
+			}
+		});
+		builder=builder.setNegativeButton("取消", null);
+			
+	
+		AlertDialog chooseSessionDialog=builder.create();
+		chooseSessionDialog.show();
+
+	}
+	
+}

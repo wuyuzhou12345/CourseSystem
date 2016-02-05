@@ -1,0 +1,195 @@
+package org.javatribe.courseSystem.Activity;
+
+import java.lang.reflect.Type;
+import java.text.DateFormat;
+import java.text.ParseException;
+import java.text.SimpleDateFormat;
+
+
+
+
+
+
+import java.util.ArrayList;
+import java.util.Date;
+import java.util.HashMap;
+import java.util.List;
+import java.util.Map;
+
+import org.javatribe.courseSystem.R;
+import org.javatribe.courseSystem.adapter.ListViewAdapter;
+import org.javatribe.courseSystem.global.Constant;
+import org.javatribe.courseSystem.model.Organization;
+import org.javatribe.courseSystem.model.Student;
+import org.javatribe.courseSystem.net.GetDataWithJson;
+import org.javatribe.courseSystem.vo.PersonInfo;
+import org.javatribe.courseSystem.vo.SessionInfo;
+
+import com.google.gson.Gson;
+import com.google.gson.reflect.TypeToken;
+
+import android.annotation.SuppressLint;
+import android.content.SharedPreferences;
+import android.os.Bundle;
+import android.os.Handler;
+import android.os.Message;
+import android.os.Handler.Callback;
+import android.support.v4.app.Fragment;
+import android.util.Log;
+import android.view.LayoutInflater;
+import android.view.View;
+import android.view.View.OnClickListener;
+import android.view.ViewGroup;
+import android.widget.Button;
+import android.widget.EditText;
+import android.widget.ScrollView;
+import android.widget.TextView;
+/**
+ * 在选择要发送信息的联系人后，编辑我的信息的其他框如"标题"和"内容"
+ * @author zhou
+ *2014年12月3日
+ */
+public class SendMessageAfterFragment extends Fragment{
+
+	private List<String> list_sno=new ArrayList<String>();
+	private TextView textViewPersonToPost;
+	private TextView textViewTitle;
+	private TextView textViewContent;
+	private Button  buttonClear;
+	private Button  buttonSend;
+	private Button buttonSearch;
+	private ScrollView scrollPersonToPost;
+	private ScrollView scrollContent;
+	private EditText editTextPersonToPost;
+	private EditText editTextTitle;
+	private EditText editTextContent;
+	private Handler send_message_handler;
+	private String PREFS_NAME="org.javatribe.courseSystem";
+	private int orgId;
+	private String sno;
+	private Bundle bundle;
+
+	public View onCreateView(LayoutInflater inflater, ViewGroup container,
+			Bundle savedInstanceState) {
+		SharedPreferences setting=getActivity().getSharedPreferences(PREFS_NAME, 0);  //SharedPreferences读取数据
+		sno=setting.getString("stuNo", "121542100");
+		orgId=setting.getInt("orgId", 0);
+		Log.i("======SendMessageAfter sno=====",sno);
+		Log.i("======SendMessageAfter  orgId======",orgId+"");
+
+
+		View rootView=inflater.inflate(R.layout.fragment_send_message,container, false);
+		textViewPersonToPost=(TextView)rootView.findViewById(R.id.fsm_tv_person_to_post);
+		scrollPersonToPost=(ScrollView)rootView.findViewById(R.id.fsm_sv_person_to_post);
+		editTextPersonToPost=(EditText)rootView.findViewById(R.id.fsm_et_person_to_post);
+		buttonSearch=(Button)rootView.findViewById(R.id.fsm_btn_lookfor);
+	
+		
+		textViewTitle=(TextView)rootView.findViewById(R.id.fsm_tv_title);
+		editTextTitle=(EditText)rootView.findViewById(R.id.fsm_et_title);
+		
+		textViewContent=(TextView)rootView.findViewById(R.id.fsm_tv_content);
+		scrollContent=(ScrollView)rootView.findViewById(R.id.fsm_sv_content);
+		editTextContent=(EditText)rootView.findViewById(R.id.fsm_et_content);
+		
+		buttonClear=(Button)rootView.findViewById(R.id.fsm_btn_clear);
+		buttonSend=(Button)rootView.findViewById(R.id.fsm_btn_send);
+		
+		bundle=getArguments();
+		editTextPersonToPost.setText(bundle.getString("persons_choose"));
+		
+		send_message_handler=new Handler(new Callback(){
+			public boolean handleMessage(Message msg) {	
+				String result=msg.obj.toString();
+				Log.i("isSendMyMessageSuccessfully",result);
+				if(!msg.obj.equals("[]")){
+					if (Boolean.parseBoolean((String) msg.obj)){
+						Log.i("sendSuccessfully","============");
+
+					      getActivity().getSupportFragmentManager()
+							.beginTransaction()
+							.replace(R.id.content_frame,new MyMessageFragment())
+							.commit();
+					}
+					else
+						Log.i("SendFailure","SendFailure");
+				}
+				return true;
+			}
+			
+		});
+		
+		buttonSearch.setOnClickListener(new OnClickListener(){
+
+			@Override
+			public void onClick(View arg0) {
+				ChoosePersonToPostFragment cptp=new ChoosePersonToPostFragment();
+				getActivity().getSupportFragmentManager()
+				.beginTransaction()
+				.replace(R.id.content_frame, cptp)
+				.commit();
+			}
+			
+		});
+		
+		buttonClear.setOnClickListener(new OnClickListener(){
+			public void onClick(View arg0){
+				editTextPersonToPost.setText("");
+				editTextTitle.setText("");
+				editTextContent.setText("");
+			}
+		});
+		
+		
+		buttonSend.setOnClickListener(new OnClickListener(){
+			public void onClick(View arg0){
+				  ArrayList<String> list_get_sno=bundle.getStringArrayList("choosen_person_id");
+					 for(String sno:list_get_sno){
+						 list_sno.add(sno);
+						 Log.i("list_sno",sno);
+					 }
+				  Date date=new Date();
+			      DateFormat format=new SimpleDateFormat("yyyy-MM-dd hh:mm:ss");
+			      String nowTime=format.format(date);
+			      final org.javatribe.courseSystem.model.Message message2=new org.javatribe.courseSystem.model.Message();
+			      message2.setMessageTitle(editTextTitle.getText().toString());
+			      message2.setMessageContent(editTextContent.getText().toString());
+			      Student stu=new Student();
+			      stu.setStuNo(sno);
+			      message2.setSender(stu);
+			      Organization org=new Organization();
+			      org.setOrgId(orgId);
+			      message2.setOrganization(org);
+			      try 
+			      {
+			    	  message2.setSendTime(format.parse(nowTime));
+			      } 
+			      catch (ParseException e) {
+			    	  e.printStackTrace();
+			      }
+			      Thread thread=new Thread("SendMyMessage"){
+			    	  Message message=send_message_handler.obtainMessage();
+			    	  String state="";
+			    	  public void run(){
+			    		  try{
+			    			  String url=Constant.BASE_URL+"/"+Constant.NAMESPACE_MESSAGE+"/"+Constant.MESSAGE_SEND_MY_MESSAGE_ACTION;
+			    			  Log.i("======url=======",url);
+			    			  Map<String,Object> params=new HashMap<String,Object>();
+			    			  params.put("message", message2);
+			    			  state=GetDataWithJson.getDataWithJsonViaObjectAndStringList(url, params, list_sno,"list_sno");
+			    		  }
+			    		  catch(Exception e){
+			    			  e.printStackTrace();
+			    		  }
+			    		  message.obj=state;
+			    		  send_message_handler.sendMessage(message);
+			    	  }
+			    	  
+			      };
+			      thread.start();
+			}
+		}); 
+		return rootView;
+	}
+
+}

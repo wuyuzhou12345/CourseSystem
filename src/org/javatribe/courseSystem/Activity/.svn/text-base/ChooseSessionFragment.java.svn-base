@@ -1,0 +1,68 @@
+package org.javatribe.courseSystem.Activity;
+
+import java.util.ArrayList;
+import java.util.List;
+
+import org.javatribe.courseSystem.R;
+import org.javatribe.courseSystem.adapter.ListViewAdapter;
+
+
+
+
+import org.javatribe.courseSystem.vo.DepartmentItem;
+import org.javatribe.courseSystem.vo.PersonItem;
+
+import android.os.Bundle;
+import android.support.v4.app.Fragment;
+import android.view.LayoutInflater;
+import android.view.View;
+import android.view.View.OnClickListener;
+import android.view.ViewGroup;
+import android.widget.Button;
+import android.widget.ExpandableListView;
+import android.widget.ListView;
+import android.widget.SimpleAdapter;
+
+public class ChooseSessionFragment extends Fragment{
+	private ListView listViewSession;
+	private Button btnOk;
+	private SimpleAdapter adapter;
+	private List<DepartmentItem> deptList=new ArrayList<DepartmentItem>();
+	@Override
+	public View onCreateView(LayoutInflater inflater, ViewGroup container,
+			Bundle savedInstanceState) {
+		// TODO Auto-generated method stub
+		View rootView=inflater.inflate(R.layout.fragment_choose_department,container, false);
+		listViewSession=(ListView)rootView.findViewById(R.id.fcd_lv_session);
+	btnOk=(Button)rootView.findViewById(R.id.fcd_btn_ok);
+		initData();
+		
+		return rootView;
+	}
+	
+	private void initData() {
+		// TODO Auto-generated method stub
+		List<PersonItem> list1=new ArrayList<PersonItem>();
+		list1.add(new PersonItem("林凤文","林凤文"));
+		list1.add(new PersonItem("周露颖","周露颖"));
+		list1.add(new PersonItem("陈尾华","陈尾华"));
+		
+		DepartmentItem deptItem1=new DepartmentItem("学习部","学习部",list1);
+		deptList.add(deptItem1);
+		
+		List<PersonItem> list2=new ArrayList<PersonItem>();
+		list2.add(new PersonItem("张碧茜","张碧茜"));
+		list2.add(new PersonItem("林纯","林纯"));
+		
+		DepartmentItem deptItem2=new DepartmentItem("秘书部","秘书部",list2);
+		deptList.add(deptItem2);
+		
+		List<PersonItem> list3=new ArrayList<PersonItem>();
+		list3.add(new PersonItem("林春燕","林春燕"));
+		list3.add(new PersonItem("黄贝贝","黄贝贝"));
+		
+		DepartmentItem deptItem3=new DepartmentItem("生活部","生活部",list3);
+		deptList.add(deptItem3);
+	}
+	
+}

@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical" 
+    >
+    <ListView
+        android:layout_margin="5dp"
+        android:id="@+id/fado_lv_departs"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+       
+        />
+     <TextView
+       android:id="@+id/fado_tv_empty"
+       android:layout_width="match_parent"
+       android:layout_height="wrap_content"
+      android:text="你还没有添加任何部门！" 
+      
+    />
+    
+<LinearLayout
+    android:id="@+id/fado_ll_options"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    >
+    <Button
+        android:id="@+id/fado_btn_delete"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="删除部门"/>
+    <Button
+        android:id="@+id/fado_btn_add"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="添加部门"/>
+    </LinearLayout>
+    <ViewStub
+        android:id="@+id/fado_stub_afterdelete"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout="@layout/fragment_admin_department_stub"
+        android:inflatedId="@+id/fads_view"
+        >
+    
+    </ViewStub>
+</LinearLayout>

@@ -1,0 +1,127 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+	android:layout_width="match_parent"
+	android:layout_height="match_parent"
+	android:orientation="vertical"
+	android:background="@drawable/background_login"
+>
+	<ImageView
+		android:id="@+id/img_login"
+		android:layout_width="150px"
+		android:layout_height="60px"
+		android:layout_marginTop="120px"
+		android:layout_marginLeft="150px"
+		android:src="@drawable/login_login"
+		android:background="#00FFFFFF"
+	>
+	</ImageView>
+	<RelativeLayout
+		android:id="@+id/login_div"
+		android:layout_width="match_parent"
+		android:layout_height="220px"
+		android:layout_marginTop="25px"
+		android:layout_marginLeft="50px"
+		android:layout_marginRight="50px"
+		android:layout_marginBottom="20px"
+		android:background="@drawable/background_login_div"
+	>
+		<EditText
+			android:id="@+id/editText_username"
+			android:layout_alignParentTop="true"
+			android:layout_width="match_parent"
+			android:layout_height="25dp"
+			android:layout_marginTop="30px"
+			android:layout_marginLeft="24px"
+			android:layout_marginRight="24px"
+			android:layout_marginBottom="10px"
+			android:hint="@string/str_username"
+			android:textSize="12sp"
+			android:textColor="#4F4F4F"
+			android:background="@drawable/edittext_login"
+			android:drawableLeft="@drawable/pic_username"
+			android:singleLine="true"
+			android:layout_gravity="center"
+		>
+		</EditText>
+		<EditText
+			android:id="@+id/editText_password"
+			android:layout_width="match_parent"
+			android:layout_height="25dp"
+			android:layout_marginTop="5px"
+			android:layout_marginRight="24px"
+			android:layout_marginBottom="10px"
+			android:layout_alignLeft="@id/editText_username"
+			android:layout_below="@id/editText_username"
+			android:hint="@string/str_password"
+			android:textSize="12sp"
+			android:textColor="#4F4F4F"
+			android:background="@drawable/edittext_login"
+			android:drawableLeft="@drawable/pic_password"
+			android:singleLine="true"
+			android:layout_gravity="center"
+			android:password="true"
+		>
+		</EditText>
+		<Button
+			android:id="@+id/btn_login"
+			android:text="@string/str_login"
+			android:layout_width="120px"
+			android:layout_height="35px"
+			android:textSize="20sp"
+			android:textColor="#2894FF"
+			android:background="@drawable/button_login"
+			android:layout_below="@id/editText_password"
+			android:layout_gravity="center"
+			android:layout_marginTop="5px"
+			android:layout_marginLeft="125px"
+		>
+		</Button>
+	</RelativeLayout>
+	<RelativeLayout
+	    android:id="@+id/relative2"
+		android:layout_width="match_parent"
+		android:layout_height="100px"
+		android:layout_marginTop="18px"
+		android:layout_marginLeft="50px"
+		android:layout_marginRight="50px"
+		android:layout_marginBottom="10px">
+		<Button
+			android:id="@+id/btn_forget_password"
+			android:text="@string/str_forget_secret"
+			android:background="#00FFFFFF"
+			android:textSize="14sp"
+			android:textColor="#FFFFFFFF"
+			android:layout_width="100px"
+			android:layout_height="40px"
+			android:layout_marginTop="10px"
+			android:layout_marginLeft="80px"
+			android:layout_marginRight="15px"
+
+		>
+		</Button>
+		<Button
+			android:id="@+id/btn_register"
+			android:text="@string/str_register_num"
+			android:background="#00FFFFFF"
+			android:textSize="14sp"
+			android:textColor="#FFFFFFFF"
+			android:layout_width="100px"
+			android:layout_height="40px"
+			android:layout_marginTop="10px"
+			android:layout_marginLeft="30px"
+			android:layout_toRightOf="@id/btn_forget_password"
+		>
+		</Button>
+	</RelativeLayout>
+</LinearLayout>
+
+
+
+
+
+
+
+
+
+
+

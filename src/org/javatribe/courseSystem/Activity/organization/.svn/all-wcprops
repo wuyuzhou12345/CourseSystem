@@ -1,0 +1,107 @@
+K 25
+svn:wc:ra_dav:version-url
+V 108
+/maplezhang.CourseSystem/!svn/ver/12/trunk/CourseSystem/src/org/javatribe/courseSystem/Activity/organization
+END
+SendMessageFragment.java
+K 25
+svn:wc:ra_dav:version-url
+V 133
+/maplezhang.CourseSystem/!svn/ver/12/trunk/CourseSystem/src/org/javatribe/courseSystem/Activity/organization/SendMessageFragment.java
+END
+SendMessageAfterFragment.java
+K 25
+svn:wc:ra_dav:version-url
+V 138
+/maplezhang.CourseSystem/!svn/ver/13/trunk/CourseSystem/src/org/javatribe/courseSystem/Activity/organization/SendMessageAfterFragment.java
+END
+MyMessageFragment.java
+K 25
+svn:wc:ra_dav:version-url
+V 131
+/maplezhang.CourseSystem/!svn/ver/12/trunk/CourseSystem/src/org/javatribe/courseSystem/Activity/organization/MyMessageFragment.java
+END
+MyAssignmentFragment.java
+K 25
+svn:wc:ra_dav:version-url
+V 134
+/maplezhang.CourseSystem/!svn/ver/12/trunk/CourseSystem/src/org/javatribe/courseSystem/Activity/organization/MyAssignmentFragment.java
+END
+NoticeFragment.java
+K 25
+svn:wc:ra_dav:version-url
+V 128
+/maplezhang.CourseSystem/!svn/ver/12/trunk/CourseSystem/src/org/javatribe/courseSystem/Activity/organization/NoticeFragment.java
+END
+LeaveForInputFragment.java
+K 25
+svn:wc:ra_dav:version-url
+V 135
+/maplezhang.CourseSystem/!svn/ver/12/trunk/CourseSystem/src/org/javatribe/courseSystem/Activity/organization/LeaveForInputFragment.java
+END
+MessageDetailFragment.java
+K 25
+svn:wc:ra_dav:version-url
+V 135
+/maplezhang.CourseSystem/!svn/ver/12/trunk/CourseSystem/src/org/javatribe/courseSystem/Activity/organization/MessageDetailFragment.java
+END
+OrgDetailFragment.java
+K 25
+svn:wc:ra_dav:version-url
+V 131
+/maplezhang.CourseSystem/!svn/ver/12/trunk/CourseSystem/src/org/javatribe/courseSystem/Activity/organization/OrgDetailFragment.java
+END
+LeaveForListFragment.java
+K 25
+svn:wc:ra_dav:version-url
+V 134
+/maplezhang.CourseSystem/!svn/ver/12/trunk/CourseSystem/src/org/javatribe/courseSystem/Activity/organization/LeaveForListFragment.java
+END
+YesMyOrganizationFragment3.java
+K 25
+svn:wc:ra_dav:version-url
+V 140
+/maplezhang.CourseSystem/!svn/ver/12/trunk/CourseSystem/src/org/javatribe/courseSystem/Activity/organization/YesMyOrganizationFragment3.java
+END
+CropImageActivity.java
+K 25
+svn:wc:ra_dav:version-url
+V 131
+/maplezhang.CourseSystem/!svn/ver/12/trunk/CourseSystem/src/org/javatribe/courseSystem/Activity/organization/CropImageActivity.java
+END
+MyAssignmentDetailFragment.java
+K 25
+svn:wc:ra_dav:version-url
+V 140
+/maplezhang.CourseSystem/!svn/ver/12/trunk/CourseSystem/src/org/javatribe/courseSystem/Activity/organization/MyAssignmentDetailFragment.java
+END
+NoticeDetailFragment.java
+K 25
+svn:wc:ra_dav:version-url
+V 134
+/maplezhang.CourseSystem/!svn/ver/12/trunk/CourseSystem/src/org/javatribe/courseSystem/Activity/organization/NoticeDetailFragment.java
+END
+ChoosePersonToPostFragment.java
+K 25
+svn:wc:ra_dav:version-url
+V 140
+/maplezhang.CourseSystem/!svn/ver/12/trunk/CourseSystem/src/org/javatribe/courseSystem/Activity/organization/ChoosePersonToPostFragment.java
+END
+LeaveForDetailFragment.java
+K 25
+svn:wc:ra_dav:version-url
+V 136
+/maplezhang.CourseSystem/!svn/ver/12/trunk/CourseSystem/src/org/javatribe/courseSystem/Activity/organization/LeaveForDetailFragment.java
+END
+AddOrgFragment.java
+K 25
+svn:wc:ra_dav:version-url
+V 128
+/maplezhang.CourseSystem/!svn/ver/12/trunk/CourseSystem/src/org/javatribe/courseSystem/Activity/organization/AddOrgFragment.java
+END
+RegisterOrgFragment.java
+K 25
+svn:wc:ra_dav:version-url
+V 133
+/maplezhang.CourseSystem/!svn/ver/12/trunk/CourseSystem/src/org/javatribe/courseSystem/Activity/organization/RegisterOrgFragment.java
+END

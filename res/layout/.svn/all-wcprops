@@ -1,0 +1,491 @@
+K 25
+svn:wc:ra_dav:version-url
+V 66
+/maplezhang.CourseSystem/!svn/ver/12/trunk/CourseSystem/res/layout
+END
+fragment_register_org.xml
+K 25
+svn:wc:ra_dav:version-url
+V 91
+/maplezhang.CourseSystem/!svn/ver/5/trunk/CourseSystem/res/layout/fragment_register_org.xml
+END
+fragment_add_org.xml
+K 25
+svn:wc:ra_dav:version-url
+V 86
+/maplezhang.CourseSystem/!svn/ver/5/trunk/CourseSystem/res/layout/fragment_add_org.xml
+END
+fragment_detail_notice.xml
+K 25
+svn:wc:ra_dav:version-url
+V 92
+/maplezhang.CourseSystem/!svn/ver/5/trunk/CourseSystem/res/layout/fragment_detail_notice.xml
+END
+fragment_message_detail.xml
+K 25
+svn:wc:ra_dav:version-url
+V 93
+/maplezhang.CourseSystem/!svn/ver/5/trunk/CourseSystem/res/layout/fragment_message_detail.xml
+END
+fragment_course_count_option.xml
+K 25
+svn:wc:ra_dav:version-url
+V 98
+/maplezhang.CourseSystem/!svn/ver/5/trunk/CourseSystem/res/layout/fragment_course_count_option.xml
+END
+fragment_reset_password.xml
+K 25
+svn:wc:ra_dav:version-url
+V 93
+/maplezhang.CourseSystem/!svn/ver/5/trunk/CourseSystem/res/layout/fragment_reset_password.xml
+END
+fragment_admin_leave_for_list.xml
+K 25
+svn:wc:ra_dav:version-url
+V 99
+/maplezhang.CourseSystem/!svn/ver/5/trunk/CourseSystem/res/layout/fragment_admin_leave_for_list.xml
+END
+fragment_admin_department_stub.xml
+K 25
+svn:wc:ra_dav:version-url
+V 100
+/maplezhang.CourseSystem/!svn/ver/5/trunk/CourseSystem/res/layout/fragment_admin_department_stub.xml
+END
+fragment_leave_for_input.xml
+K 25
+svn:wc:ra_dav:version-url
+V 94
+/maplezhang.CourseSystem/!svn/ver/5/trunk/CourseSystem/res/layout/fragment_leave_for_input.xml
+END
+fragment_add_user_section.xml
+K 25
+svn:wc:ra_dav:version-url
+V 95
+/maplezhang.CourseSystem/!svn/ver/5/trunk/CourseSystem/res/layout/fragment_add_user_section.xml
+END
+fragment_send_message.xml
+K 25
+svn:wc:ra_dav:version-url
+V 91
+/maplezhang.CourseSystem/!svn/ver/5/trunk/CourseSystem/res/layout/fragment_send_message.xml
+END
+fragment_my_course.xml
+K 25
+svn:wc:ra_dav:version-url
+V 88
+/maplezhang.CourseSystem/!svn/ver/5/trunk/CourseSystem/res/layout/fragment_my_course.xml
+END
+dialog_add_depart_name.xml
+K 25
+svn:wc:ra_dav:version-url
+V 92
+/maplezhang.CourseSystem/!svn/ver/5/trunk/CourseSystem/res/layout/dialog_add_depart_name.xml
+END
+fragment_search_course.xml
+K 25
+svn:wc:ra_dav:version-url
+V 92
+/maplezhang.CourseSystem/!svn/ver/5/trunk/CourseSystem/res/layout/fragment_search_course.xml
+END
+fragment_search_student_course.xml
+K 25
+svn:wc:ra_dav:version-url
+V 100
+/maplezhang.CourseSystem/!svn/ver/5/trunk/CourseSystem/res/layout/fragment_search_student_course.xml
+END
+crop_image.xml
+K 25
+svn:wc:ra_dav:version-url
+V 80
+/maplezhang.CourseSystem/!svn/ver/5/trunk/CourseSystem/res/layout/crop_image.xml
+END
+fragment_student_course.xml
+K 25
+svn:wc:ra_dav:version-url
+V 93
+/maplezhang.CourseSystem/!svn/ver/5/trunk/CourseSystem/res/layout/fragment_student_course.xml
+END
+sliding_menu_menu.xml
+K 25
+svn:wc:ra_dav:version-url
+V 87
+/maplezhang.CourseSystem/!svn/ver/5/trunk/CourseSystem/res/layout/sliding_menu_menu.xml
+END
+fragment_department_item.xml
+K 25
+svn:wc:ra_dav:version-url
+V 94
+/maplezhang.CourseSystem/!svn/ver/5/trunk/CourseSystem/res/layout/fragment_department_item.xml
+END
+fragment_choose_person_to_post.xml
+K 25
+svn:wc:ra_dav:version-url
+V 100
+/maplezhang.CourseSystem/!svn/ver/5/trunk/CourseSystem/res/layout/fragment_choose_person_to_post.xml
+END
+fragment_admin_leave_for_list_item.xml
+K 25
+svn:wc:ra_dav:version-url
+V 104
+/maplezhang.CourseSystem/!svn/ver/5/trunk/CourseSystem/res/layout/fragment_admin_leave_for_list_item.xml
+END
+fragment_user_audit_list_style.xml
+K 25
+svn:wc:ra_dav:version-url
+V 100
+/maplezhang.CourseSystem/!svn/ver/5/trunk/CourseSystem/res/layout/fragment_user_audit_list_style.xml
+END
+fragment_leave_for_list_item
+K 25
+svn:wc:ra_dav:version-url
+V 94
+/maplezhang.CourseSystem/!svn/ver/5/trunk/CourseSystem/res/layout/fragment_leave_for_list_item
+END
+fragment_after_search_course.xml
+K 25
+svn:wc:ra_dav:version-url
+V 98
+/maplezhang.CourseSystem/!svn/ver/5/trunk/CourseSystem/res/layout/fragment_after_search_course.xml
+END
+choose_avatar.xml
+K 25
+svn:wc:ra_dav:version-url
+V 83
+/maplezhang.CourseSystem/!svn/ver/5/trunk/CourseSystem/res/layout/choose_avatar.xml
+END
+fragment_my_assignment_item.xml
+K 25
+svn:wc:ra_dav:version-url
+V 97
+/maplezhang.CourseSystem/!svn/ver/5/trunk/CourseSystem/res/layout/fragment_my_assignment_item.xml
+END
+fragment_after_search_student_course.xml
+K 25
+svn:wc:ra_dav:version-url
+V 106
+/maplezhang.CourseSystem/!svn/ver/5/trunk/CourseSystem/res/layout/fragment_after_search_student_course.xml
+END
+fragment_admin_deparment_delete_listitem.xml
+K 25
+svn:wc:ra_dav:version-url
+V 110
+/maplezhang.CourseSystem/!svn/ver/5/trunk/CourseSystem/res/layout/fragment_admin_deparment_delete_listitem.xml
+END
+fragment_choose_time.xml
+K 25
+svn:wc:ra_dav:version-url
+V 90
+/maplezhang.CourseSystem/!svn/ver/5/trunk/CourseSystem/res/layout/fragment_choose_time.xml
+END
+fragment_no_class_person_item.xml
+K 25
+svn:wc:ra_dav:version-url
+V 99
+/maplezhang.CourseSystem/!svn/ver/5/trunk/CourseSystem/res/layout/fragment_no_class_person_item.xml
+END
+fragment_choose_department_item.xml
+K 25
+svn:wc:ra_dav:version-url
+V 101
+/maplezhang.CourseSystem/!svn/ver/5/trunk/CourseSystem/res/layout/fragment_choose_department_item.xml
+END
+fragment_user_audit_list.xml
+K 25
+svn:wc:ra_dav:version-url
+V 94
+/maplezhang.CourseSystem/!svn/ver/5/trunk/CourseSystem/res/layout/fragment_user_audit_list.xml
+END
+fragment_user_audit_nolist.xml
+K 25
+svn:wc:ra_dav:version-url
+V 96
+/maplezhang.CourseSystem/!svn/ver/5/trunk/CourseSystem/res/layout/fragment_user_audit_nolist.xml
+END
+fragment_detail_user.xml
+K 25
+svn:wc:ra_dav:version-url
+V 90
+/maplezhang.CourseSystem/!svn/ver/5/trunk/CourseSystem/res/layout/fragment_detail_user.xml
+END
+fragment_content.xml
+K 25
+svn:wc:ra_dav:version-url
+V 86
+/maplezhang.CourseSystem/!svn/ver/5/trunk/CourseSystem/res/layout/fragment_content.xml
+END
+sliding_menu_content.xml
+K 25
+svn:wc:ra_dav:version-url
+V 90
+/maplezhang.CourseSystem/!svn/ver/5/trunk/CourseSystem/res/layout/sliding_menu_content.xml
+END
+fragment_my_assignment.xml
+K 25
+svn:wc:ra_dav:version-url
+V 92
+/maplezhang.CourseSystem/!svn/ver/5/trunk/CourseSystem/res/layout/fragment_my_assignment.xml
+END
+spinner.xml
+K 25
+svn:wc:ra_dav:version-url
+V 77
+/maplezhang.CourseSystem/!svn/ver/5/trunk/CourseSystem/res/layout/spinner.xml
+END
+fragment_admin_board_manage.xml
+K 25
+svn:wc:ra_dav:version-url
+V 97
+/maplezhang.CourseSystem/!svn/ver/5/trunk/CourseSystem/res/layout/fragment_admin_board_manage.xml
+END
+fragment_personal_info.xml
+K 25
+svn:wc:ra_dav:version-url
+V 92
+/maplezhang.CourseSystem/!svn/ver/5/trunk/CourseSystem/res/layout/fragment_personal_info.xml
+END
+fragment_admin_menu.xml
+K 25
+svn:wc:ra_dav:version-url
+V 89
+/maplezhang.CourseSystem/!svn/ver/5/trunk/CourseSystem/res/layout/fragment_admin_menu.xml
+END
+fragment_dept_item.xml
+K 25
+svn:wc:ra_dav:version-url
+V 88
+/maplezhang.CourseSystem/!svn/ver/5/trunk/CourseSystem/res/layout/fragment_dept_item.xml
+END
+fragment_leave_for_detail.xml
+K 25
+svn:wc:ra_dav:version-url
+V 95
+/maplezhang.CourseSystem/!svn/ver/5/trunk/CourseSystem/res/layout/fragment_leave_for_detail.xml
+END
+fragment_admin_my_manage_org.xml
+K 25
+svn:wc:ra_dav:version-url
+V 99
+/maplezhang.CourseSystem/!svn/ver/10/trunk/CourseSystem/res/layout/fragment_admin_my_manage_org.xml
+END
+fragment_yes_my_organization.xml
+K 25
+svn:wc:ra_dav:version-url
+V 98
+/maplezhang.CourseSystem/!svn/ver/5/trunk/CourseSystem/res/layout/fragment_yes_my_organization.xml
+END
+fragment_id_transfer.xml
+K 25
+svn:wc:ra_dav:version-url
+V 90
+/maplezhang.CourseSystem/!svn/ver/5/trunk/CourseSystem/res/layout/fragment_id_transfer.xml
+END
+fragment_admin_department_option.xml
+K 25
+svn:wc:ra_dav:version-url
+V 102
+/maplezhang.CourseSystem/!svn/ver/5/trunk/CourseSystem/res/layout/fragment_admin_department_option.xml
+END
+fragment_user_menu.xml
+K 25
+svn:wc:ra_dav:version-url
+V 88
+/maplezhang.CourseSystem/!svn/ver/5/trunk/CourseSystem/res/layout/fragment_user_menu.xml
+END
+fragment_my_org_progressbar.xml
+K 25
+svn:wc:ra_dav:version-url
+V 97
+/maplezhang.CourseSystem/!svn/ver/5/trunk/CourseSystem/res/layout/fragment_my_org_progressbar.xml
+END
+fragment_notice.xml
+K 25
+svn:wc:ra_dav:version-url
+V 85
+/maplezhang.CourseSystem/!svn/ver/5/trunk/CourseSystem/res/layout/fragment_notice.xml
+END
+fragment_member_item.xml
+K 25
+svn:wc:ra_dav:version-url
+V 90
+/maplezhang.CourseSystem/!svn/ver/5/trunk/CourseSystem/res/layout/fragment_member_item.xml
+END
+fragment_detail_transfer.xml
+K 25
+svn:wc:ra_dav:version-url
+V 94
+/maplezhang.CourseSystem/!svn/ver/5/trunk/CourseSystem/res/layout/fragment_detail_transfer.xml
+END
+fragment_audit_record_list_style.xml
+K 25
+svn:wc:ra_dav:version-url
+V 102
+/maplezhang.CourseSystem/!svn/ver/5/trunk/CourseSystem/res/layout/fragment_audit_record_list_style.xml
+END
+fragment_leave_for_list.xml
+K 25
+svn:wc:ra_dav:version-url
+V 93
+/maplezhang.CourseSystem/!svn/ver/5/trunk/CourseSystem/res/layout/fragment_leave_for_list.xml
+END
+fragment_detail_audit_user.xml
+K 25
+svn:wc:ra_dav:version-url
+V 96
+/maplezhang.CourseSystem/!svn/ver/5/trunk/CourseSystem/res/layout/fragment_detail_audit_user.xml
+END
+fragment_person_info_extend.xml
+K 25
+svn:wc:ra_dav:version-url
+V 97
+/maplezhang.CourseSystem/!svn/ver/5/trunk/CourseSystem/res/layout/fragment_person_info_extend.xml
+END
+fragment_my_assign.xml
+K 25
+svn:wc:ra_dav:version-url
+V 88
+/maplezhang.CourseSystem/!svn/ver/5/trunk/CourseSystem/res/layout/fragment_my_assign.xml
+END
+menu_list_item.xml
+K 25
+svn:wc:ra_dav:version-url
+V 84
+/maplezhang.CourseSystem/!svn/ver/5/trunk/CourseSystem/res/layout/menu_list_item.xml
+END
+fragment_my_org_list_item.xml
+K 25
+svn:wc:ra_dav:version-url
+V 95
+/maplezhang.CourseSystem/!svn/ver/5/trunk/CourseSystem/res/layout/fragment_my_org_list_item.xml
+END
+fragment_add_user_list_style.xml
+K 25
+svn:wc:ra_dav:version-url
+V 98
+/maplezhang.CourseSystem/!svn/ver/5/trunk/CourseSystem/res/layout/fragment_add_user_list_style.xml
+END
+fragment_add_user.xml
+K 25
+svn:wc:ra_dav:version-url
+V 87
+/maplezhang.CourseSystem/!svn/ver/5/trunk/CourseSystem/res/layout/fragment_add_user.xml
+END
+activity_login.xml
+K 25
+svn:wc:ra_dav:version-url
+V 84
+/maplezhang.CourseSystem/!svn/ver/5/trunk/CourseSystem/res/layout/activity_login.xml
+END
+fragment_audit_record_list.xml
+K 25
+svn:wc:ra_dav:version-url
+V 96
+/maplezhang.CourseSystem/!svn/ver/5/trunk/CourseSystem/res/layout/fragment_audit_record_list.xml
+END
+fragment_admin_notice_detail.xml
+K 25
+svn:wc:ra_dav:version-url
+V 98
+/maplezhang.CourseSystem/!svn/ver/5/trunk/CourseSystem/res/layout/fragment_admin_notice_detail.xml
+END
+fragment_audit_record_nolist.xml
+K 25
+svn:wc:ra_dav:version-url
+V 98
+/maplezhang.CourseSystem/!svn/ver/5/trunk/CourseSystem/res/layout/fragment_audit_record_nolist.xml
+END
+fragment_my_assignment_detail.xml
+K 25
+svn:wc:ra_dav:version-url
+V 99
+/maplezhang.CourseSystem/!svn/ver/5/trunk/CourseSystem/res/layout/fragment_my_assignment_detail.xml
+END
+fragment_my_message.xml
+K 25
+svn:wc:ra_dav:version-url
+V 89
+/maplezhang.CourseSystem/!svn/ver/5/trunk/CourseSystem/res/layout/fragment_my_message.xml
+END
+fragment_detail_org.xml
+K 25
+svn:wc:ra_dav:version-url
+V 89
+/maplezhang.CourseSystem/!svn/ver/5/trunk/CourseSystem/res/layout/fragment_detail_org.xml
+END
+fragment_add_user_list.xml
+K 25
+svn:wc:ra_dav:version-url
+V 92
+/maplezhang.CourseSystem/!svn/ver/5/trunk/CourseSystem/res/layout/fragment_add_user_list.xml
+END
+fragment_add_user_nolist.xml
+K 25
+svn:wc:ra_dav:version-url
+V 94
+/maplezhang.CourseSystem/!svn/ver/5/trunk/CourseSystem/res/layout/fragment_add_user_nolist.xml
+END
+fragment_my_org_dialog.xml
+K 25
+svn:wc:ra_dav:version-url
+V 92
+/maplezhang.CourseSystem/!svn/ver/5/trunk/CourseSystem/res/layout/fragment_my_org_dialog.xml
+END
+dialog_modify_depart_name.xml
+K 25
+svn:wc:ra_dav:version-url
+V 95
+/maplezhang.CourseSystem/!svn/ver/5/trunk/CourseSystem/res/layout/dialog_modify_depart_name.xml
+END
+fragment_admin_deparment_normal_listitem.xml
+K 25
+svn:wc:ra_dav:version-url
+V 110
+/maplezhang.CourseSystem/!svn/ver/5/trunk/CourseSystem/res/layout/fragment_admin_deparment_normal_listitem.xml
+END
+fragment_no_class_person_infomation.xml
+K 25
+svn:wc:ra_dav:version-url
+V 105
+/maplezhang.CourseSystem/!svn/ver/5/trunk/CourseSystem/res/layout/fragment_no_class_person_infomation.xml
+END
+fragment_choose_department.xml
+K 25
+svn:wc:ra_dav:version-url
+V 96
+/maplezhang.CourseSystem/!svn/ver/5/trunk/CourseSystem/res/layout/fragment_choose_department.xml
+END
+fragment_admin_leave_for_detail.xml
+K 25
+svn:wc:ra_dav:version-url
+V 101
+/maplezhang.CourseSystem/!svn/ver/5/trunk/CourseSystem/res/layout/fragment_admin_leave_for_detail.xml
+END
+fragment_person_item.xml
+K 25
+svn:wc:ra_dav:version-url
+V 90
+/maplezhang.CourseSystem/!svn/ver/5/trunk/CourseSystem/res/layout/fragment_person_item.xml
+END
+activity_register_student.xml
+K 25
+svn:wc:ra_dav:version-url
+V 95
+/maplezhang.CourseSystem/!svn/ver/5/trunk/CourseSystem/res/layout/activity_register_student.xml
+END
+fragment_admin_leave_for_personal_detail.xml
+K 25
+svn:wc:ra_dav:version-url
+V 110
+/maplezhang.CourseSystem/!svn/ver/5/trunk/CourseSystem/res/layout/fragment_admin_leave_for_personal_detail.xml
+END
+fragment_admin_org_member.xml
+K 25
+svn:wc:ra_dav:version-url
+V 95
+/maplezhang.CourseSystem/!svn/ver/5/trunk/CourseSystem/res/layout/fragment_admin_org_member.xml
+END
+fragment_choose_free_person_to_post.xml
+K 25
+svn:wc:ra_dav:version-url
+V 106
+/maplezhang.CourseSystem/!svn/ver/12/trunk/CourseSystem/res/layout/fragment_choose_free_person_to_post.xml
+END

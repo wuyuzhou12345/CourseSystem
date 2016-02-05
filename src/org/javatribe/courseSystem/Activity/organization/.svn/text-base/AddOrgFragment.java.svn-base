@@ -1,0 +1,212 @@
+package org.javatribe.courseSystem.Activity.organization;
+
+
+import java.lang.reflect.Type;
+import java.util.ArrayList;
+import java.util.HashMap;
+import java.util.List;
+import java.util.Map;
+
+import org.javatribe.courseSystem.R;
+import org.javatribe.courseSystem.global.Constant;
+import org.javatribe.courseSystem.model.Organization;
+import org.javatribe.courseSystem.net.GetDataWithJson;
+
+import android.app.AlertDialog;
+import android.app.AlertDialog.Builder;
+import android.app.Dialog;
+import android.content.DialogInterface;
+import android.os.Bundle;
+import android.os.Handler;
+import android.os.Message;
+import android.os.Handler.Callback;
+import android.support.v4.app.Fragment;
+import android.text.Editable;
+import android.util.Log;
+import android.view.LayoutInflater;
+import android.view.View;
+import android.view.View.OnClickListener;
+import android.view.ViewGroup;
+import android.widget.AdapterView;
+import android.widget.AdapterView.OnItemClickListener;
+import android.widget.Button;
+import android.widget.EditText;
+import android.widget.ListView;
+import android.widget.SimpleAdapter;
+import android.widget.Spinner;
+import android.widget.TextView;
+import android.widget.Toast;
+
+import org.javatribe.courseSystem.util.JsonUtil;
+
+import com.google.gson.Gson;
+import com.google.gson.reflect.TypeToken;
+
+/**加入组织
+ * @author zhou
+ *2014/9/28
+ */
+//laohaiqinghaolaohaolao
+public class AddOrgFragment extends Fragment{
+
+	TextView fao_tv_org_levle;
+	TextView fao_tv_org_name;
+	Spinner fao_sp_org_level;
+	EditText fao_et_org_name;
+	Button fao_btn_search;
+	ListView fao_lv_org_name;
+	SimpleAdapter adapter;
+	Handler handler;
+	List<Organization> list_org;    //存放从服务器端接收过来的关于org的list
+	List<Map<String,Object>> search_org=new ArrayList<Map<String,Object>>();    //存放符合adapter的组织头像路径和组织名称的list
+	//abcdefghijklmn
+	private static final String TAG="AddOrg";
+	public View onCreateView(LayoutInflater inflater, ViewGroup container,
+			Bundle savedInstanceState) {
+		// TODO Auto-generated method stub
+		final View rootView=inflater.inflate(R.layout.fragment_add_org,container, false);
+		fao_tv_org_levle=(TextView)rootView.findViewById(R.id.fao_tv_org_level);
+		fao_tv_org_name=(TextView)rootView.findViewById(R.id.fao_tv_org_name);
+		fao_sp_org_level=(Spinner)rootView.findViewById(R.id.fao_sp_org_level);
+		fao_et_org_name=(EditText)rootView.findViewById(R.id.fao_et_org_name);
+		fao_btn_search=(Button)rootView.findViewById(R.id.fao_btn_search);
+//gkhgjh
+
+		handler=new Handler(new Callback(){
+ 
+			@Override
+			public  boolean handleMessage(Message msg) {
+				fao_btn_search.setClickable(true);
+				if(msg.obj!=null){
+						Log.i("====msg.obj=====",msg.obj.toString());
+						String result=msg.obj.toString();
+						Log.i("!!!!!result!!!!!!",result);
+						if(result.equals("[]")){
+							Toast.makeText(getActivity(), "对不起，没有相匹配的组织信息！", Toast.LENGTH_LONG).show();
+						}
+						else{
+						Type type=new TypeToken<List<Organization>>(){}.getType();
+						Log.i("type_organization=====",type+"");
+						list_org=new Gson().fromJson(result,type);
+
+						for(int i=0;i<list_org.size();i++){
+							Log.i("org"+i,list_org.get(i).getOrgName());
+						}
+						if(search_org!=null){
+							Log.i("=======","========");
+							search_org.clear();
+							Log.i("search_org.size()",search_org.size()+"");
+						}
+						for(Organization org:list_org){
+							Map<String,Object> org_item=new HashMap<String,Object>();
+							org_item.put("image",R.drawable.fymo_img_01);    //此处的组织头像路径需要修改
+							org_item.put("org",org.getOrgName());
+							search_org.add(org_item);
+						}
+						fao_lv_org_name=(ListView)rootView.findViewById(R.id.fao_lv_org_name);
+						adapter=new SimpleAdapter(getActivity(),search_org,R.drawable.fao_lv_item,new String[]{"image","org"},new int[]{R.id.fao_img_name,R.id.fao_tv_org_name});
+						fao_lv_org_name.setAdapter(adapter);
+						fao_lv_org_name.setOnItemClickListener(new OnItemClickListener(){
+
+							public void onItemClick(AdapterView<?> arg0, View arg1,
+									int arg2, long arg3) {
+								Bundle bundle=new Bundle();
+								String str=(String)((TextView)arg1.findViewById(R.id.fao_tv_org_name)).getText();
+								Log.i("aaaaaaa",str);
+								for(int i=0;i<list_org.size();i++){
+									if(str.equals(list_org.get(i).getOrgName())){
+										bundle.putInt("img",R.drawable.fymo_img_01);    //此处图片路径需要更改   change-->list_org.get(i).getOrg_img_path()
+										bundle.putString("org_name",list_org.get(i).getOrgName());
+										bundle.putString("info",list_org.get(i).getOrgIntroduction());
+										bundle.putInt("orgId",list_org.get(i).getOrgId());
+										
+									}
+								}
+								OrgDetailFragment orgDetailFragment=new OrgDetailFragment();
+								orgDetailFragment.setArguments(bundle);
+								getActivity().getSupportFragmentManager().beginTransaction().replace(R.id.content_frame,orgDetailFragment).addToBackStack(null).commit();
+							
+							}
+							
+						});
+						}
+
+				}
+				else{
+					Log.i("failure","failure");
+				}
+				return true;
+			
+		}
+		});
+	    fao_btn_search.setOnClickListener(new OnClickListener(){
+	    	public void onClick(View arg0) {
+				// TODO Auto-generated method stub
+	    		fao_btn_search.setClickable(false);
+				final String temp=fao_et_org_name.getText().toString();
+				final String str_org_level=fao_sp_org_level.getSelectedItem().toString();
+				Log.i("org_level",str_org_level);
+				final int org_level;
+				if(str_org_level.trim().equals("校级")){
+					org_level=0;
+				}
+				else{
+					org_level=1;
+				}
+				Log.i("org_level",org_level+"jibie");
+				Log.i(TAG,"temp="+temp);
+									
+				if(temp.equals("")||temp.equals(null)){
+				    	AlertDialog.Builder builder=new AlertDialog.Builder(getActivity());
+				    	builder.setTitle("Error");
+				    	builder.setMessage("搜索内容不能为空！");
+				    	builder.setPositiveButton("确定", new DialogInterface.OnClickListener() {
+				    		   public void onClick(DialogInterface dialog, int which)
+				    		   {
+				    		    dialog.dismiss();
+
+				    		   }
+				    		  });
+				    	builder.show();
+				}
+				else{
+					Thread thread=new Thread("SerachOrg"){
+						public void run(){
+							Log.i("thread start!","thread start!");
+							Message message=handler.obtainMessage();
+							try {
+								String url=Constant.BASE_URL+"/"+Constant.NAMESPACE_ORGANIZATION+"/"+Constant.ORGANIZATION_SEARCH_ORG_ACTION;
+								Log.i("url",url);
+								Map<String,String> params=new HashMap<String,String>();
+								params.put("level",org_level+"");
+								params.put("orgName", temp);
+								Log.i("aa","aa");
+								String js=GetDataWithJson.getDataWithJsonViaSimpleData(url,params);
+								Log.i("======js=====",js); 
+								message.obj = js;
+							}
+							catch(Exception e){
+								e.printStackTrace();
+							}
+							
+							handler.sendMessage(message);
+						}
+					};
+					thread.start();
+
+					
+			}
+				
+
+	    	}
+
+	    	
+	    });
+		return rootView;
+		
+
+	}
+
+	
+
+}

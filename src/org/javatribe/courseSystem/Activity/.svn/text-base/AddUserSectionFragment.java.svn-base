@@ -1,0 +1,160 @@
+package org.javatribe.courseSystem.Activity;
+
+
+import java.util.ArrayList;
+import java.util.HashMap;
+import java.util.List;
+import java.util.Map;
+
+import org.javatribe.courseSystem.R;
+
+
+import org.javatribe.courseSystem.entity.User;
+
+import android.annotation.SuppressLint;
+import android.app.AlertDialog;
+import android.content.DialogInterface;
+import android.os.Bundle;
+import android.os.Parcelable;
+import android.support.v4.app.Fragment;
+import android.util.Log;
+import android.view.LayoutInflater;
+import android.view.View;
+import android.view.View.OnClickListener;
+import android.view.ViewGroup;
+import android.widget.Button;
+import android.widget.SimpleAdapter;
+import android.widget.Spinner;
+import android.widget.Toast;
+import org.javatribe.courseSystem.Activity.*;
+
+/**������֯
+ * @author zhou
+ *2014/9/28
+ */
+public class AddUserSectionFragment extends Fragment{
+
+	Spinner fauc_sp_section;
+	Button fauc_btn_add;
+	SimpleAdapter adapter;
+	User user;
+	Map<String,List<User>> RedCross;
+	List<User> publicRelationsDepartment;
+	List<User> secretaryDepartment;
+	List<User> organizationDepartment;
+	List<User> propagandaDepartment;
+	List<User> trainingDepartment;
+	List<User> users = new ArrayList<User>();
+	User user1 = new User("123", "ľͷ��");
+	User user2 = new User("321", "ţͷ��");
+	User user3 = new User("456", "��ͷ��");
+	User user4 = new User("654", "��ͷ��");
+	private static final String TAG="AddUser";
+	public View onCreateView(LayoutInflater inflater, ViewGroup container,
+			Bundle savedInstanceState) {
+		// TODO Auto-generated method stub
+		final Bundle bundle_user = getArguments();
+		user = new User(bundle_user.getString("id"), bundle_user.getString("name"));
+		user.setDept(bundle_user.getString("dept"));
+		user.setSex(bundle_user.getString("sex"));
+		final View rootView=inflater.inflate(R.layout.fragment_add_user_section,container, false);
+		fauc_sp_section=(Spinner)rootView.findViewById(R.id.fauc_sp_section);
+		fauc_btn_add=(Button)rootView.findViewById(R.id.fauc_btn_add);
+		RedCross = new HashMap<String, List<User>>();
+		publicRelationsDepartment = new ArrayList<User>();
+		publicRelationsDepartment.add(user1);
+		publicRelationsDepartment.add(user2);
+		RedCross.put("publicRelationsDepartment", publicRelationsDepartment);
+		secretaryDepartment = new ArrayList<User>();
+		secretaryDepartment.add(user3);
+		RedCross.put("secretaryDepartment", secretaryDepartment);
+		organizationDepartment = new ArrayList<User>();
+		RedCross.put("organizationDepartment", organizationDepartment);
+		propagandaDepartment = new ArrayList<User>();
+		RedCross.put("propagandaDepartment", propagandaDepartment);
+		trainingDepartment = new ArrayList<User>();
+		RedCross.put("trainingDepartment", trainingDepartment);
+	    fauc_btn_add.setOnClickListener(new OnClickListener(){
+			@SuppressLint("ShowToast")
+			public void onClick(View arg0) {
+				// TODO Auto-generated method stub
+	    		String section = fauc_sp_section.getSelectedItem().toString();
+				if((section.trim().equals("")||section.equals(null))){
+				    	AlertDialog.Builder builder=new AlertDialog.Builder(getActivity());
+				    	builder.setTitle("Error");
+				    	builder.setMessage("��ѡ�����Ĳ��ţ�");
+				    	builder.setPositiveButton("ȷ��", new DialogInterface.OnClickListener() {
+				    		   public void onClick(DialogInterface dialog, int which){
+				    			   dialog.dismiss();
+
+				    		   }
+				    	});
+				    	builder.show();
+				}
+				else{
+					boolean isAdd = false;
+					String message = "��� "+user.getName()+"��";
+					if(section.equals("���鲿")){
+						if(!secretaryDepartment.contains(user)){
+							message+="secretaryDepartment";
+							secretaryDepartment.add(user);
+							RedCross.put("secretaryDepartment", secretaryDepartment);
+							isAdd = true;
+						}
+					}
+					if(section.equals("��")){
+						if(!propagandaDepartment.contains(user)){
+							message+="propagandaDepartment";
+							propagandaDepartment.add(user);
+							RedCross.put("propagandaDepartment", propagandaDepartment);
+							isAdd = true;
+						}	
+					}
+					if(section.equals("��֯��")){
+						if(!organizationDepartment.contains(user)){
+							message+="organizationDepartment";
+							organizationDepartment.add(user);
+							RedCross.put("organizationDepartment", organizationDepartment);
+							isAdd = true;
+						}
+					}
+					if(section.equals("������")){
+						if(!publicRelationsDepartment.contains(user)){
+							message+="publicRelationsDepartment";
+							publicRelationsDepartment.add(user);
+							RedCross.put("publicRelationsDepartment", publicRelationsDepartment);
+							isAdd = true;
+						}
+					}
+					if(section.equals("��ѵ��")){
+						if(!trainingDepartment.contains(user)){
+							message+="trainingDepartment";
+							trainingDepartment.add(user);
+							RedCross.put("trainingDepartment", trainingDepartment);			
+							isAdd = true;
+						}
+					}
+					if (isAdd) {
+						message+="�ɹ���";
+					}else{
+						message = user.getName()+"���ڸò��ţ�����Ҫ�ظ���ӡ�";
+					}
+			
+				//Toast.makeText(getActivity(), message, Toast.LENGTH_LONG).show();;
+//			ArrayList<? extends Parcelable> users_list = UserListFragment.list;
+					Bundle bundle=new Bundle();
+//					users_list.remove(user);
+//					bundle_user.putParcelableArrayList("list_user", users_list);
+					bundle.putString("dept", user.getDept());
+					bundle.putString("temp", bundle_user.getString("temp"));
+					UserListFragment userListFragment=new UserListFragment();
+					userListFragment.setArguments(bundle);
+					getActivity().getSupportFragmentManager().beginTransaction().replace(R.id.content_frame,userListFragment).addToBackStack(null).commit();
+				
+				}			
+			}    	
+	    });
+
+		return rootView;
+	}
+}

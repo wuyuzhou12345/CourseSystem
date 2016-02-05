@@ -1,0 +1,98 @@
+package org.javatribe.courseSystem.Activity;
+
+import java.util.ArrayList;
+import java.util.List;
+
+import org.javatribe.courseSystem.R;
+import org.javatribe.courseSystem.adapter.ListViewAdapter;
+
+import org.javatribe.courseSystem.vo.SessionInfo;
+import org.javatribe.courseSystem.vo.PersonItem;
+import org.javatribe.courseSystem.vo.SessionInfo;
+
+import android.os.Bundle;
+import android.support.v4.app.Fragment;
+import android.view.LayoutInflater;
+import android.view.View;
+import android.view.View.OnClickListener;
+import android.view.ViewGroup;
+import android.widget.Button;
+import android.widget.ExpandableListView;
+
+/**
+ * 检索无课表
+ * 
+ * @author qing 2014年12月9日
+ */
+public class AfterSearchCourseFragment extends Fragment {
+	private ExpandableListView expandableList;
+	private Button btn_send;
+	private ListViewAdapter adapter;
+	private List<SessionInfo> deptList = new ArrayList<SessionInfo>();
+
+	@Override
+	public View onCreateView(LayoutInflater inflater, ViewGroup container,
+			Bundle savedInstanceState) {
+		// TODO Auto-generated method stub
+		View rootView = inflater.inflate(
+				R.layout.fragment_choose_person_to_post, container, false);
+//hahahah
+		expandableList = (ExpandableListView) rootView
+				.findViewById(R.id.fcptp_elv_expandable_listview);
+		btn_send = (Button) rootView.findViewById(R.id.fcptp_btn_send);
+		btn_send.setOnClickListener(new OnClickListener() {
+
+			@Override
+			public void onClick(View arg0) {
+				// TODO Auto-generated method stub
+				collectCheckedItems();
+			}
+
+		});
+		// initData();
+		adapter = new ListViewAdapter(getActivity(), deptList);
+		expandableList.setAdapter(adapter);
+		return rootView;
+	}
+
+	private void collectCheckedItems() {
+		String checkedItems = "";
+		List<String> checkedPerson = adapter.getCheckedPerson();
+		if (checkedPerson != null && !checkedPerson.isEmpty()) {
+			for (String person : checkedPerson) {
+				if (checkedItems.length() > 0) {
+					checkedItems += "、";
+				}
+				checkedItems += person;
+			}
+		}
+		Bundle bundle = new Bundle();
+		bundle.putString("persons_choose", checkedItems);
+		SendMessageAfterFragment sendMessageAfterFragment = new SendMessageAfterFragment();
+		sendMessageAfterFragment.setArguments(bundle);
+		getActivity().getSupportFragmentManager().beginTransaction()
+				.replace(R.id.content_frame, sendMessageAfterFragment).commit();
+
+	}
+	/*
+	 * private void initData() { // TODO Auto-generated method stub
+	 * List<PersonItem> list1=new ArrayList<PersonItem>(); list1.add(new
+	 * PersonItem("林凤文","林凤文")); list1.add(new PersonItem("周露颖","周露颖"));
+	 * list1.add(new PersonItem("陈尾华","陈尾华"));
+	 * 
+	 * //SessionInfo deptItem1=new SessionInfo("学习部","学习部",list1);
+	 * deptList.add(deptItem1);
+	 * 
+	 * List<PersonItem> list2=new ArrayList<PersonItem>(); list2.add(new
+	 * PersonItem("张碧茜","张碧茜")); list2.add(new PersonItem("林纯","林纯"));
+	 * 
+	 * //SessionInfo deptItem2=new SessionInfo("秘书部","秘书部",list2);
+	 * deptList.add(deptItem2);
+	 * 
+	 * List<PersonItem> list3=new ArrayList<PersonItem>(); list3.add(new
+	 * PersonItem("林春燕","林春燕")); list3.add(new PersonItem("黄贝贝","黄贝贝"));
+	 * 
+	 * //SessionInfo deptItem3=new SessionInfo("生活部","生活部",list3);
+	 * deptList.add(deptItem3); }
+	 */
+}

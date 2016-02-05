@@ -1,0 +1,68 @@
+package org.javatribe.courseSystem.Activity;
+
+
+
+import java.util.ArrayList;
+
+import org.javatribe.courseSystem.R;
+
+
+import android.os.Bundle;
+import android.os.Parcelable;
+import android.support.v4.app.Fragment;
+import android.view.LayoutInflater;
+import android.view.View;
+import android.view.View.OnClickListener;
+import android.view.ViewGroup;
+import android.widget.Button;
+import android.widget.TextView;
+import android.widget.Toast;
+
+/**��֯���
+ * @author zhou
+ *2014/9/28
+ */
+public class UserDetailFragment extends Fragment {
+
+	TextView fdu_tv_user_name;
+	TextView fdu_tv_user_id;
+	TextView fdu_tv_user_sex;
+	TextView fdu_tv_user_dept;
+	Button fdu_btn_add;
+	public View onCreateView(LayoutInflater inflater, ViewGroup container,
+			Bundle savedInstanceState) {
+		// TODO Auto-generated method stub
+		View rootView=inflater.inflate(R.layout.fragment_detail_user, container, false);
+		final Bundle bundle=getArguments();
+		fdu_tv_user_name=(TextView)rootView.findViewById(R.id.fdu_tv_user_name);
+		fdu_tv_user_id=(TextView)rootView.findViewById(R.id.fdu_tv_user_id);
+		fdu_tv_user_sex=(TextView)rootView.findViewById(R.id.fdu_tv_user_sex);
+		fdu_tv_user_dept=(TextView)rootView.findViewById(R.id.fdu_tv_user_dept);
+		fdu_btn_add=(Button)rootView.findViewById(R.id.fdu_btn_add);
+		fdu_btn_add.setOnClickListener(new OnClickListener() {
+			@Override
+			public void onClick(View arg0) {
+				// TODO Auto-generated method stub
+////				User user = new User(bundle.getString("id"), bundle.getString("name"));
+////				user.setDept(bundle.getString("dept"));
+////				user.setSex(bundle.getString("sex"));
+//				Bundle bundle_user=new Bundle();
+//				bundle_user.putString("temp",bundle.getString("temp"));
+//				bundle_user.putString("name", user.getName());
+//				bundle_user.putString("id", user.getId());
+//				bundle_user.putString("dept", user.getDept());
+//				bundle_user.putString("sex", user.getSex());
+//				AddUserSectionFragment addUserSectionFragment=new AddUserSectionFragment();
+//				addUserSectionFragment.setArguments(bundle_user);
+//				getActivity().getSupportFragmentManager().beginTransaction().replace(R.id.content_frame,addUserSectionFragment).addToBackStack(null).commit();
+			//	Toast.makeText(getActivity(), "��ӳɹ�", Toast.LENGTH_SHORT);
+			}
+		});
+		fdu_tv_user_name.setText("���� "+bundle.getString("name"));
+		fdu_tv_user_id.setText("ѧ�ţ� "+bundle.getString("id"));
+		fdu_tv_user_sex.setText("�Ա� "+bundle.getString("sex"));
+		fdu_tv_user_dept.setText("ϵ�� "+bundle.getString("dept"));
+		return rootView;
+	}
+	
+}

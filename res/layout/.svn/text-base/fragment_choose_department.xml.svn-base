@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    			android:layout_width="match_parent"
+    			android:layout_height="wrap_content"
+    			android:background="#FFFFFF"
+    			android:gravity="center_vertical"
+    			android:orientation="horizontal"
+    			android:paddingBottom="5dp"
+    			android:paddingRight="20dp"
+    			android:paddingLeft="20dp"
+    			android:paddingTop="5dp">
+<ListView
+    android:layout_marginLeft="5dp"
+    android:layout_marginRight="5dp"
+    android:id="@+id/fcd_lv_session"
+    android:layout_height="wrap_content"
+    android:layout_width="match_parent"
+    />  
+    <Button
+        android:id="@+id/fcd_btn_ok"
+           android:layout_height="wrap_content"
+    android:layout_width="match_parent"
+    android:layout_marginLeft="5dp"
+    android:layout_marginRight="5dp"
+    android:text="确定"/>  
+</LinearLayout>

@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="horizontal"
+    android:layout_margin="10dp" >
+<TextView
+    android:id="@+id/falf_tv_tip"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:text="任务："/>
+<ImageView
+         android:layout_width="fill_parent"
+         android:layout_height="1dp" 
+         android:background="#007979"
+         android:id="@+id/fdn_iv_thread"
+         android:layout_below="@id/falf_tv_tip"
+         android:layout_marginBottom="5dp"
+         android:layout_marginLeft="5dp"
+         android:layout_marginTop="5dp">
+         </ImageView>
+<TextView
+    android:layout_below="@id/falf_tv_tip"
+    android:id="@+id/falf_tv_content"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_marginLeft="20dp"
+    android:layout_marginTop="20dp"
+	android:text="任务内容"
+	android:maxLines="5"
+	android:lines="3"
+
+    />
+<TextView
+    android:id="@+id/falf_tv_totalTip"
+    android:layout_below="@id/falf_tv_content"
+     android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:layout_marginRight="10dp"
+    android:layout_marginLeft="150dp"
+    android:text="总请假人数："
+    android:layout_marginTop="10dp"
+    android:layout_gravity="right"/>
+<TextView
+    android:id="@+id/falf_tv_total"
+    android:layout_toRightOf="@id/falf_tv_totalTip"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+   android:text="5"
+   android:layout_below="@id/falf_tv_content"
+   android:layout_marginTop="10dp"/>
+<TextView
+    android:id="@+id/falf_tv_person"
+    android:layout_toRightOf="@id/falf_tv_total"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+   android:text="人"
+   android:layout_below="@id/falf_tv_content"
+   android:layout_marginTop="10dp"
+   android:layout_marginLeft="5dp"/>
+
+
+</RelativeLayout>

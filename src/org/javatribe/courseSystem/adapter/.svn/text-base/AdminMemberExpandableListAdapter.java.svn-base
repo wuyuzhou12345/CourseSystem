@@ -1,0 +1,202 @@
+package org.javatribe.courseSystem.adapter;
+
+import java.util.ArrayList;
+import java.util.HashMap;
+import java.util.List;
+import java.util.Map;
+import org.javatribe.courseSystem.R;
+import org.javatribe.courseSystem.Activity.Util.DepartmentViewHolder;
+import org.javatribe.courseSystem.Activity.Util.PersonViewHolder;
+import org.javatribe.courseSystem.Activity.personalInfo.PersonalInformationFragment;
+import org.javatribe.courseSystem.ui.SlideCutListView;
+import org.javatribe.courseSystem.ui.SlideCutListView.RemoveDirection;
+import org.javatribe.courseSystem.ui.SlideCutListView.RemoveListener;
+import org.javatribe.courseSystem.vo.DepartmentItem;
+import org.javatribe.courseSystem.vo.PersonInfo;
+import org.javatribe.courseSystem.vo.PersonItem;
+import org.javatribe.courseSystem.vo.SessionInfo;
+
+import android.content.Context;
+import android.support.v4.widget.SimpleCursorAdapter.ViewBinder;
+import android.util.AttributeSet;
+import android.util.Log;
+import android.view.LayoutInflater;
+import android.view.MotionEvent;
+import android.view.VelocityTracker;
+import android.view.View;
+import android.view.ViewConfiguration;
+import android.view.WindowManager;
+import android.view.View.OnClickListener;
+import android.view.ViewGroup;
+import android.widget.AdapterView;
+import android.widget.BaseExpandableListAdapter;
+import android.widget.CheckBox;
+import android.widget.CompoundButton;
+import android.widget.ExpandableListAdapter;
+import android.widget.Scroller;
+import android.widget.Toast;
+import android.widget.CompoundButton.OnCheckedChangeListener;
+import android.widget.ImageView;
+import android.widget.LinearLayout;
+import android.widget.TextView;
+import android.widget.Button;
+
+public class AdminMemberExpandableListAdapter extends BaseExpandableListAdapter{
+
+	private List<SessionInfo> deptList;
+	private LayoutInflater inflater;
+
+	
+	public AdminMemberExpandableListAdapter(Context context,List<SessionInfo> get_sessions){
+		this.deptList=get_sessions;
+		inflater=LayoutInflater.from(context);
+		int deptCount=getGroupCount();
+		for(int deptPosition=0;deptPosition<deptCount;deptPosition++){
+			SessionInfo departmentItem=get_sessions.get(deptPosition);
+			List<PersonInfo> personItems=departmentItem.getPersonInfos();
+		}
+	}
+	@Override
+	public Object getChild(int deptPosition, int perPosition) {
+		final SessionInfo departmentItem=deptList.get(deptPosition);
+		if(departmentItem==null||departmentItem.getPersonInfos()==null||departmentItem.getPersonInfos().isEmpty()){
+			return null;
+			
+		}
+		return departmentItem.getPersonInfos().get(perPosition);
+	}
+	public String getPersonName(int deptPosition, int perPosition) {
+		final SessionInfo departmentItem=deptList.get(deptPosition);
+		if(departmentItem==null||departmentItem.getPersonInfos()==null||departmentItem.getPersonInfos().isEmpty()){
+			return null;
+		}
+		return departmentItem.getPersonInfos().get(perPosition).getName();
+	}
+	@Override
+	public long getChildId(int deptPosition, int perPosition) {
+		// TODO Auto-generated method stub
+		return perPosition;
+	}
+
+	@Override
+	public View getChildView(final int deptPosition,final int perPosition,boolean isLastPerson,View convertView,final ViewGroup parent) {
+		
+		// TODO Auto-generated method stub
+		
+		final PersonItem personItem=(PersonItem)getChild(deptPosition,perPosition);
+		 PersonViewHolder viewHolder=null;
+		if(convertView==null){
+			viewHolder=new PersonViewHolder();
+			convertView=inflater.inflate(R.layout.fragment_member_item,null);
+			viewHolder.textViewPersonName=(TextView)convertView.findViewById(R.id.fmi_tv_member_name);
+			//viewHolder.buttonDelete=(Button)convertView.findViewById(R.id.fmi_btn_delete);
+			viewHolder.imageViewPower=(ImageView)convertView.findViewById(R.id.fmi_iv_is_admin_or_not);
+			convertView.setTag(viewHolder);
+			 
+		}
+		else{
+			viewHolder=(PersonViewHolder)convertView.getTag();
+		}
+		
+		
+		viewHolder.textViewPersonName.setText(personItem.getName());
+		viewHolder.imageViewPower.setImageResource(personItem.getImage_power());
+//		viewHolder.buttonDelete.setOnClickListener(new OnClickListener(){
+//
+//			@Override
+//			public void onClick(View arg0) {
+//				// TODO Auto-generated method stub
+//				Log.i("zhouluying","12345");
+//				deptList.remove(perPosition);
+//				 // AdminMemberExpandableListAdapter.this.notifyDataSetChanged();
+//			}
+//			
+//		});
+
+
+		//convertView.setFocusable(false);
+		
+		return convertView;
+	}
+
+	@Override
+	public int getChildrenCount(int deptPosition) {
+		// TODO Auto-generated method stub
+		final SessionInfo departmentItem=deptList.get(deptPosition);
+		if(departmentItem==null||departmentItem.getPersonInfos()==null||
+				departmentItem.getPersonInfos().isEmpty()){
+			return 0;
+		}
+		return departmentItem.getPersonInfos().size();
+	}
+
+	public int  getPersonGroup(int deptPosition) {
+		// TODO Auto-generated method stub
+		final SessionInfo departmentItem=deptList.get(deptPosition);
+		if(departmentItem==null||departmentItem.getPersonInfos()==null||departmentItem.getPersonInfos().isEmpty()){
+			return 0;
+			
+		}
+		return departmentItem.getPersonInfos().size();
+	}
+
+	public 	Object getGroup(int deptPosition) {
+		// TODO Auto-generated method stub
+		if(deptList==null){
+			return null;
+		}
+		return deptList.get(deptPosition);
+	}
+
+	public int getGroupCount() {
+		// TODO Auto-generated method stub
+		if(deptList==null)
+			return 0;
+		return deptList.size();
+	}
+
+	public long getGroupId(int deptPosition){
+		return deptPosition;
+	}
+	@Override
+	public View getGroupView(int deptPosition, boolean isExpanded, View convertView, ViewGroup parent) {
+		// TODO Auto-generated method stub
+		try{
+			SessionInfo departmentItem=deptList.get(deptPosition);
+			DepartmentViewHolder viewHolder=null;
+			if(viewHolder==null){
+				viewHolder=new DepartmentViewHolder();
+				convertView=inflater.inflate(R.layout.fragment_dept_item, null);
+				viewHolder.textViewDeptName=(TextView)convertView.findViewById(R.id.fdi_tv_dept_name);
+				convertView.setTag(viewHolder);
+			}
+			else{
+				viewHolder=(DepartmentViewHolder)convertView.getTag();
+			}
+			viewHolder.textViewDeptName.setText(departmentItem.getName());
+		}
+		catch(Exception e){
+			e.printStackTrace();
+			
+		}
+		//convertView.setFocusable(false);
+		return convertView;
+	}
+
+	@Override
+	public boolean hasStableIds() {
+		// TODO Auto-generated method stub
+		return false;
+	}
+
+	@Override
+	public boolean isChildSelectable(int deptPosition, int perPosition) {
+		// TODO Auto-generated method stub
+		return true;
+	}
+	
+		
+	}
+
+
+

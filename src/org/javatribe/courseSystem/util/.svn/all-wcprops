@@ -1,0 +1,29 @@
+K 25
+svn:wc:ra_dav:version-url
+V 91
+/maplezhang.CourseSystem/!svn/ver/12/trunk/CourseSystem/src/org/javatribe/courseSystem/util
+END
+SerializableMap.java
+K 25
+svn:wc:ra_dav:version-url
+V 111
+/maplezhang.CourseSystem/!svn/ver/5/trunk/CourseSystem/src/org/javatribe/courseSystem/util/SerializableMap.java
+END
+JsonUtil.java
+K 25
+svn:wc:ra_dav:version-url
+V 104
+/maplezhang.CourseSystem/!svn/ver/5/trunk/CourseSystem/src/org/javatribe/courseSystem/util/JsonUtil.java
+END
+HttpUtil.java
+K 25
+svn:wc:ra_dav:version-url
+V 105
+/maplezhang.CourseSystem/!svn/ver/12/trunk/CourseSystem/src/org/javatribe/courseSystem/util/HttpUtil.java
+END
+EncodeBase64File.java
+K 25
+svn:wc:ra_dav:version-url
+V 112
+/maplezhang.CourseSystem/!svn/ver/5/trunk/CourseSystem/src/org/javatribe/courseSystem/util/EncodeBase64File.java
+END

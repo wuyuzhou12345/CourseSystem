@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+        <string-array name="org_kind">
+        <item>校级</item>
+        <item>系级</item>
+        </string-array>
+        <string-array name="course_count">
+                  <item>10</item>
+        <item>11</item>
+                <item>12</item>
+                <item>13</item>
+        <item>14</item>
+          <item>15</item>
+        <item>16</item>
+          <item>17</item>
+        <item>18</item>
+      </string-array>
+           <string-array name="choose_day">
+                  <item>星期一</item>
+        <item>星期二</item>
+                <item>星期三</item>
+                <item>星期四</item>
+        <item>星期五</item>
+         <item>星期六</item>
+          <item>星期日</item>
+      </string-array>
+         <string-array name="choose_week">
+                  <item>单周</item>
+        <item>双周</item>
+                <item>不限</item>
+      </string-array>
+  
+    <string-array name="user_dept">
+        <item>计科系</item>
+        <item>金融系</item>
+		<item>会计系</item>
+		<item>保险系</item>
+		<item>工管系</item>
+		<item>应数系</item>
+		<item>经贸系</item>
+		<item>劳经系</item>
+		<item>法律系</item>
+		<item>财传系</item>
+		<item>公管系</item>
+		<item>外语系</item>	
+		<item>信管系</item>
+    </string-array>
+    <string-array name="user_redCross_section">
+		<item>秘书部</item>
+		<item>组织部</item>
+		<item>外联部</item>
+		<item>宣传部</item>
+		<item>培训部</item>	
+    </string-array>
+      <string-array name="dept">
+		<item>秘书部</item>
+		<item>学习部</item>
+		<item>生活部</item>
+	</string-array>
+	      <string-array name="dept2">
+	     <item>未设置组</item>     
+		<item>秘书部</item>
+		<item>学习部</item>
+		<item>生活部</item>
+	</string-array>
+</resources>

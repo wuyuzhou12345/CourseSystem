@@ -1,0 +1,102 @@
+package org.javatribe.courseSystem.Activity.admin.power;
+
+
+import org.javatribe.courseSystem.R;
+
+
+
+
+import org.javatribe.courseSystem.model.Student;
+
+import android.app.AlertDialog;
+import android.app.AlertDialog.Builder;
+import android.content.DialogInterface;
+import android.os.Bundle;
+import android.support.v4.app.Fragment;
+import android.view.LayoutInflater;
+import android.view.View;
+import android.view.View.OnClickListener;
+import android.view.ViewGroup;
+import android.widget.Button;
+import android.widget.EditText;
+import android.widget.SimpleAdapter;
+import android.widget.TextView;
+import android.widget.Toast;
+
+/**加入组织
+ * @author zhong
+ *2014/11/02
+ */
+public class AdminTransferDetailFragment extends Fragment{
+	
+	TextView tv_name;
+	TextView tv_id;
+	TextView tv_section;
+	TextView tv_dept;
+	TextView tv_org; 
+	Button btn_comfirm;
+	SimpleAdapter adapter;
+	Student stu;
+	public View onCreateView(LayoutInflater inflater, ViewGroup container,
+			Bundle savedInstanceState) {
+		final Bundle bundle = getArguments();
+		//stu = new Student(bundle.getString("no"), bundle.getString("name"));
+		stu.setDept(bundle.getString("dept"));
+	
+		stu.setGender(bundle.getString("section"));
+		final View rootView=inflater.inflate(R.layout.fragment_detail_transfer,container, false);
+		tv_id = (TextView)rootView.findViewById(R.id.fdt_tv_user_id); 
+		tv_name = (TextView)rootView.findViewById(R.id.fdt_tv_user_name); 
+		tv_section = (TextView)rootView.findViewById(R.id.fdt_tv_user_section); 
+		tv_dept = (TextView)rootView.findViewById(R.id.fdt_tv_user_dept); 
+		tv_org = (TextView)rootView.findViewById(R.id.fdt_tv_user_org); 
+		btn_comfirm=(Button)rootView.findViewById(R.id.fdt_btn_comfirm);
+	    btn_comfirm.setOnClickListener(new OnClickListener(){
+			public void onClick(View arg0) {
+				 final EditText inputServer = new EditText(getActivity());
+			        inputServer.setFocusable(true);
+			        boolean check = false;
+			        AlertDialog.Builder builder = new AlertDialog.Builder(getActivity());
+			        builder.setTitle("请输入密码")
+			        	.setView(inputServer)
+			        	.setNegativeButton("取消", null);
+			        builder.setPositiveButton("确定",
+			                new DialogInterface.OnClickListener() {
+			                    public void onClick(DialogInterface dialog, int which) {
+			                    	if(inputServer.getText().toString().equals("123")){
+			                    		// create
+			        					AlertDialog.Builder builder = new AlertDialog.Builder(getActivity())
+			        					.setTitle("确定一下")
+			        					.setMessage("真的要转让吗?");
+			        					builder.setPositiveButton("确定", new DialogInterface.OnClickListener() {
+			        						@Override
+			        						public void onClick(DialogInterface arg0, int arg1) {
+			        							Toast.makeText(getActivity(), "转让了", 2000).show();
+			        						}
+			        					});
+			        					builder.setNegativeButton("取消", new DialogInterface.OnClickListener() {
+			        						@Override
+			        						public void onClick(DialogInterface arg0, int arg1) {
+			        							Toast.makeText(getActivity(), "取消了", 2000).show();
+			        						}
+			        					});
+			        					AlertDialog dialog1 = builder.create();
+			        					dialog1.show();
+			                    	}else {
+	        							Toast.makeText(getActivity(), "密码错误！", 2000).show();
+
+									}
+			                    }
+			                });
+			        builder.show();
+				
+			}    	
+	    });
+	    tv_name.setText("姓名： "+bundle.getString("name"));
+		tv_id.setText("学号： "+bundle.getString("no"));
+		tv_section.setText("部门： "+bundle.getString("section"));
+		tv_dept.setText("系别： "+bundle.getString("dept"));
+		tv_org.setText("组织： "+bundle.getString("org"));
+		return rootView;
+	}
+}

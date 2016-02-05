@@ -1,0 +1,233 @@
+K 25
+svn:wc:ra_dav:version-url
+V 95
+/maplezhang.CourseSystem/!svn/ver/12/trunk/CourseSystem/src/org/javatribe/courseSystem/Activity
+END
+MenuFragment.java
+K 25
+svn:wc:ra_dav:version-url
+V 112
+/maplezhang.CourseSystem/!svn/ver/5/trunk/CourseSystem/src/org/javatribe/courseSystem/Activity/MenuFragment.java
+END
+SendMessageFragment.java
+K 25
+svn:wc:ra_dav:version-url
+V 119
+/maplezhang.CourseSystem/!svn/ver/5/trunk/CourseSystem/src/org/javatribe/courseSystem/Activity/SendMessageFragment.java
+END
+AfterSearchCourseFragment.java
+K 25
+svn:wc:ra_dav:version-url
+V 125
+/maplezhang.CourseSystem/!svn/ver/6/trunk/CourseSystem/src/org/javatribe/courseSystem/Activity/AfterSearchCourseFragment.java
+END
+ChooseTimeDialog.java
+K 25
+svn:wc:ra_dav:version-url
+V 116
+/maplezhang.CourseSystem/!svn/ver/5/trunk/CourseSystem/src/org/javatribe/courseSystem/Activity/ChooseTimeDialog.java
+END
+UserDetailFragment.java
+K 25
+svn:wc:ra_dav:version-url
+V 118
+/maplezhang.CourseSystem/!svn/ver/5/trunk/CourseSystem/src/org/javatribe/courseSystem/Activity/UserDetailFragment.java
+END
+VideoServiceTest.java
+K 25
+svn:wc:ra_dav:version-url
+V 116
+/maplezhang.CourseSystem/!svn/ver/5/trunk/CourseSystem/src/org/javatribe/courseSystem/Activity/VideoServiceTest.java
+END
+MyAssignmentFragment.java
+K 25
+svn:wc:ra_dav:version-url
+V 120
+/maplezhang.CourseSystem/!svn/ver/5/trunk/CourseSystem/src/org/javatribe/courseSystem/Activity/MyAssignmentFragment.java
+END
+MainActivity.java
+K 25
+svn:wc:ra_dav:version-url
+V 112
+/maplezhang.CourseSystem/!svn/ver/5/trunk/CourseSystem/src/org/javatribe/courseSystem/Activity/MainActivity.java
+END
+MessageDetailFragment.java
+K 25
+svn:wc:ra_dav:version-url
+V 121
+/maplezhang.CourseSystem/!svn/ver/5/trunk/CourseSystem/src/org/javatribe/courseSystem/Activity/MessageDetailFragment.java
+END
+SlidingMenuLeftActivity.java
+K 25
+svn:wc:ra_dav:version-url
+V 123
+/maplezhang.CourseSystem/!svn/ver/5/trunk/CourseSystem/src/org/javatribe/courseSystem/Activity/SlidingMenuLeftActivity.java
+END
+AfterSearchStudentCourseFragment.java
+K 25
+svn:wc:ra_dav:version-url
+V 133
+/maplezhang.CourseSystem/!svn/ver/13/trunk/CourseSystem/src/org/javatribe/courseSystem/Activity/AfterSearchStudentCourseFragment.java
+END
+SearchStudentCourseFragment.java
+K 25
+svn:wc:ra_dav:version-url
+V 127
+/maplezhang.CourseSystem/!svn/ver/5/trunk/CourseSystem/src/org/javatribe/courseSystem/Activity/SearchStudentCourseFragment.java
+END
+YesMyOrganizationFragment3.java
+K 25
+svn:wc:ra_dav:version-url
+V 126
+/maplezhang.CourseSystem/!svn/ver/5/trunk/CourseSystem/src/org/javatribe/courseSystem/Activity/YesMyOrganizationFragment3.java
+END
+NoClassPersonFragment.java
+K 25
+svn:wc:ra_dav:version-url
+V 121
+/maplezhang.CourseSystem/!svn/ver/8/trunk/CourseSystem/src/org/javatribe/courseSystem/Activity/NoClassPersonFragment.java
+END
+CropImageActivity.java
+K 25
+svn:wc:ra_dav:version-url
+V 117
+/maplezhang.CourseSystem/!svn/ver/5/trunk/CourseSystem/src/org/javatribe/courseSystem/Activity/CropImageActivity.java
+END
+NoticeDetailFragment.java
+K 25
+svn:wc:ra_dav:version-url
+V 120
+/maplezhang.CourseSystem/!svn/ver/5/trunk/CourseSystem/src/org/javatribe/courseSystem/Activity/NoticeDetailFragment.java
+END
+CourseCountOptionFragment.java
+K 25
+svn:wc:ra_dav:version-url
+V 125
+/maplezhang.CourseSystem/!svn/ver/5/trunk/CourseSystem/src/org/javatribe/courseSystem/Activity/CourseCountOptionFragment.java
+END
+UserListFragment.java
+K 25
+svn:wc:ra_dav:version-url
+V 116
+/maplezhang.CourseSystem/!svn/ver/5/trunk/CourseSystem/src/org/javatribe/courseSystem/Activity/UserListFragment.java
+END
+SearchNoClassPersonFragment.java
+K 25
+svn:wc:ra_dav:version-url
+V 127
+/maplezhang.CourseSystem/!svn/ver/5/trunk/CourseSystem/src/org/javatribe/courseSystem/Activity/SearchNoClassPersonFragment.java
+END
+LeaveForDetailFragment.java
+K 25
+svn:wc:ra_dav:version-url
+V 122
+/maplezhang.CourseSystem/!svn/ver/5/trunk/CourseSystem/src/org/javatribe/courseSystem/Activity/LeaveForDetailFragment.java
+END
+AddOrgFragment.java
+K 25
+svn:wc:ra_dav:version-url
+V 115
+/maplezhang.CourseSystem/!svn/ver/13/trunk/CourseSystem/src/org/javatribe/courseSystem/Activity/AddOrgFragment.java
+END
+RegisterActivity.java
+K 25
+svn:wc:ra_dav:version-url
+V 116
+/maplezhang.CourseSystem/!svn/ver/5/trunk/CourseSystem/src/org/javatribe/courseSystem/Activity/RegisterActivity.java
+END
+RegisterOrgFragment.java
+K 25
+svn:wc:ra_dav:version-url
+V 119
+/maplezhang.CourseSystem/!svn/ver/5/trunk/CourseSystem/src/org/javatribe/courseSystem/Activity/RegisterOrgFragment.java
+END
+ChooseSessionFragment.java
+K 25
+svn:wc:ra_dav:version-url
+V 121
+/maplezhang.CourseSystem/!svn/ver/5/trunk/CourseSystem/src/org/javatribe/courseSystem/Activity/ChooseSessionFragment.java
+END
+SendMessageAfterFragment.java
+K 25
+svn:wc:ra_dav:version-url
+V 124
+/maplezhang.CourseSystem/!svn/ver/5/trunk/CourseSystem/src/org/javatribe/courseSystem/Activity/SendMessageAfterFragment.java
+END
+MyMessageFragment.java
+K 25
+svn:wc:ra_dav:version-url
+V 117
+/maplezhang.CourseSystem/!svn/ver/5/trunk/CourseSystem/src/org/javatribe/courseSystem/Activity/MyMessageFragment.java
+END
+ContentFragment.java
+K 25
+svn:wc:ra_dav:version-url
+V 115
+/maplezhang.CourseSystem/!svn/ver/5/trunk/CourseSystem/src/org/javatribe/courseSystem/Activity/ContentFragment.java
+END
+AddUserSectionFragment.java
+K 25
+svn:wc:ra_dav:version-url
+V 122
+/maplezhang.CourseSystem/!svn/ver/5/trunk/CourseSystem/src/org/javatribe/courseSystem/Activity/AddUserSectionFragment.java
+END
+NoticeFragment.java
+K 25
+svn:wc:ra_dav:version-url
+V 114
+/maplezhang.CourseSystem/!svn/ver/5/trunk/CourseSystem/src/org/javatribe/courseSystem/Activity/NoticeFragment.java
+END
+LeaveForInputFragment.java
+K 25
+svn:wc:ra_dav:version-url
+V 121
+/maplezhang.CourseSystem/!svn/ver/5/trunk/CourseSystem/src/org/javatribe/courseSystem/Activity/LeaveForInputFragment.java
+END
+LeaveForListFragment.java
+K 25
+svn:wc:ra_dav:version-url
+V 120
+/maplezhang.CourseSystem/!svn/ver/5/trunk/CourseSystem/src/org/javatribe/courseSystem/Activity/LeaveForListFragment.java
+END
+AddUserFragment.java
+K 25
+svn:wc:ra_dav:version-url
+V 115
+/maplezhang.CourseSystem/!svn/ver/9/trunk/CourseSystem/src/org/javatribe/courseSystem/Activity/AddUserFragment.java
+END
+PersonalInformationFragment.java
+K 25
+svn:wc:ra_dav:version-url
+V 127
+/maplezhang.CourseSystem/!svn/ver/5/trunk/CourseSystem/src/org/javatribe/courseSystem/Activity/PersonalInformationFragment.java
+END
+ResetPasswordFragment.java
+K 25
+svn:wc:ra_dav:version-url
+V 121
+/maplezhang.CourseSystem/!svn/ver/5/trunk/CourseSystem/src/org/javatribe/courseSystem/Activity/ResetPasswordFragment.java
+END
+MyAssignmentDetailFragment.java
+K 25
+svn:wc:ra_dav:version-url
+V 126
+/maplezhang.CourseSystem/!svn/ver/5/trunk/CourseSystem/src/org/javatribe/courseSystem/Activity/MyAssignmentDetailFragment.java
+END
+ChoosePersonToPostFragment.java
+K 25
+svn:wc:ra_dav:version-url
+V 126
+/maplezhang.CourseSystem/!svn/ver/5/trunk/CourseSystem/src/org/javatribe/courseSystem/Activity/ChoosePersonToPostFragment.java
+END
+MyCourseFragment.java
+K 25
+svn:wc:ra_dav:version-url
+V 116
+/maplezhang.CourseSystem/!svn/ver/5/trunk/CourseSystem/src/org/javatribe/courseSystem/Activity/MyCourseFragment.java
+END
+SearchCourseFragment.java
+K 25
+svn:wc:ra_dav:version-url
+V 120
+/maplezhang.CourseSystem/!svn/ver/5/trunk/CourseSystem/src/org/javatribe/courseSystem/Activity/SearchCourseFragment.java
+END

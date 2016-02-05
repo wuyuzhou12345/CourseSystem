@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical" 
+    android:background="#F0F0F0"
+
+    >
+   <com.ab.view.pullview.AbPullListView
+         android:layout_marginTop="15dp"
+        android:id="@+id/fn_lv_notice"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content" 
+        android:layout_marginLeft="20dp"
+        android:layout_marginRight="20dp"
+        android:layout_weight="1"
+		android:divider="@drawable/list_divider"
+        android:dividerHeight="1dip" 
+        android:fastScrollEnabled="true">
+        </com.ab.view.pullview.AbPullListView>
+</LinearLayout>

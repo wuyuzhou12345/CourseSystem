@@ -1,0 +1,136 @@
+package org.javatribe.courseSystem.Activity;
+
+import java.text.SimpleDateFormat;
+import java.util.ArrayList;
+import java.util.HashMap;
+import java.util.List;
+import java.util.Map;
+
+
+
+
+
+
+
+
+
+
+
+import org.javatribe.courseSystem.R;
+import org.javatribe.courseSystem.ui.SlideCutListView;
+import org.javatribe.courseSystem.ui.SlideCutListView.RemoveDirection;
+import org.javatribe.courseSystem.ui.SlideCutListView.RemoveListener;
+
+import android.os.Bundle;
+import android.support.v4.app.Fragment;
+import android.util.Log;
+import android.view.LayoutInflater;
+import android.view.View;
+import android.view.ViewGroup;
+import android.widget.AdapterView;
+import android.widget.AdapterView.OnItemClickListener;
+import android.widget.SimpleAdapter;
+import android.widget.TextView;
+import android.widget.Toast;
+
+public class MyMessageFragment extends Fragment implements RemoveListener{
+	private SlideCutListView listViewAllAssgin;
+	private SimpleAdapter adapter;
+	private List<Map<String,String>> data;
+	private SimpleDateFormat format;
+	@Override
+	public View onCreateView(LayoutInflater inflater, ViewGroup container,
+			Bundle savedInstanceState) {
+		// TODO Auto-generated method stub
+		 View rootView=inflater.inflate(R.layout.fragment_my_assign,container, false);
+		 listViewAllAssgin=(SlideCutListView)rootView.findViewById(R.id.fma_lv_myassign);
+		format=new SimpleDateFormat("yyyy-MM-dd");
+		 data=getData();
+		 adapter=new SimpleAdapter(getActivity(),data,R.layout.fragment_my_message,new String[]{"title","date"},new int[]{R.id.fmm_tv_title,R.id.fmm_tv_date});
+		 listViewAllAssgin.setAdapter(adapter);
+		 listViewAllAssgin.setRemoveListener(this);
+		 listViewAllAssgin.setOnItemClickListener(new OnItemClickListener(){
+				public void onItemClick(AdapterView<?> arg0, View arg1, int position, long arg3) {
+				// TODO Auto-generated method stub
+				Bundle bundle_msg_detail=new Bundle();
+				Log.i("123","aaaaaaaaa");
+				String str=(String)((TextView)arg1.findViewById(R.id.fmm_tv_title)).getText();
+				Log.i("aaaaaaa",str);
+				if(str.equals("--------发送信息---------")){
+					getActivity().getSupportFragmentManager().beginTransaction().replace(R.id.content_frame, new SendMessageFragment()).addToBackStack(null).commit();
+				}
+				else { 
+					if(str.equals("项目开会")){
+						bundle_msg_detail.putString("msg_title", "项目开会");
+						bundle_msg_detail.putString("msg_date", "2014-09-12");
+						bundle_msg_detail.putString("msg_content","关于新学期项目进度以及后期学习方案讨论~~");
+					}
+					if(str.equals("爪哇部落活动")){
+						bundle_msg_detail.putString("msg_title", "爪哇部落活动");
+						bundle_msg_detail.putString("msg_date", "2014-09-30");
+						bundle_msg_detail.putString("msg_content","大二项目组队情况以及新学期招新情况~~");
+					}
+					if(str.equals("聚餐")){
+						bundle_msg_detail.putString("msg_title", "聚餐");
+						bundle_msg_detail.putString("msg_date", "2014-10-07");
+						bundle_msg_detail.putString("msg_content","大家快都出去吃好吃的拉~~");
+					}
+			
+					MessageDetailFragment messageDetailFragment=new MessageDetailFragment();
+					messageDetailFragment.setArguments(bundle_msg_detail);
+					getActivity().getSupportFragmentManager().beginTransaction().replace(R.id.content_frame,messageDetailFragment).addToBackStack(null).commit();
+				}
+			
+			
+			}
+		 });
+		return rootView;
+	
+	}
+	public List<Map<String,String>> getData()
+	{
+		data=new ArrayList<Map<String,String>>();
+		Map<String,String> map1=new HashMap<String,String>();
+		map1.put("title", "项目开会");
+		map1.put("date", format.format(new java.util.Date()));
+		data.add(map1);
+		Map<String,String> map2=new HashMap<String,String>();
+		map2.put("title", "爪哇部落活动");
+		map2.put("date", format.format(new java.util.Date()));
+		data.add(map2);
+		Map<String,String> map3=new HashMap<String,String>();
+		map3.put("title", "聚餐");
+		map3.put("date", format.format(new java.util.Date()));
+		data.add(map3);
+		
+		Map<String,String> map5=new HashMap<String,String>();
+		
+		
+		Map<String,String> map4=new HashMap<String,String>();
+		map4.put("title", "--------发送信息---------");
+		data.add(map4);
+		return data;
+	}
+	
+	public void removeItem(RemoveDirection direction, int position) {
+		// TODO Auto-generated method stub
+		Log.d("MyMessageFragment",position+"");
+		data.remove(position);
+	    //adapter.remove(adapter.getItem(position));
+		adapter.notifyDataSetChanged();
+		listViewAllAssgin.setAdapter(adapter);
+		Log.d("MyAssignmentFragment",position+"");
+		switch (direction) {
+		case RIGHT: 
+			Toast.makeText(getActivity(), "向右删除  "+ position, Toast.LENGTH_SHORT).show();
+			break;
+		case LEFT:
+			Toast.makeText(getActivity(), "向左删除  "+ position, Toast.LENGTH_SHORT).show();
+			break;
+
+		default:
+			break;
+		}
+	}
+
+}

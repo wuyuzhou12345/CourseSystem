@@ -1,0 +1,140 @@
+package org.javatribe.courseSystem.Activity.admin.user;
+
+import java.util.ArrayList;
+import java.util.HashMap;
+import java.util.List;
+import java.util.Map;
+
+import org.javatribe.courseSystem.R;
+import org.javatribe.courseSystem.Activity.personalInfo.PersonalInformationFragment;
+import org.javatribe.courseSystem.adapter.AdminMemberExpandableListAdapter;
+import org.javatribe.courseSystem.global.Constant;
+import org.javatribe.courseSystem.net.GetDataWithJson;
+import org.javatribe.courseSystem.vo.DepartmentItem;
+import org.javatribe.courseSystem.vo.PersonInfo;
+import org.javatribe.courseSystem.vo.SessionInfo;
+
+import com.ab.view.pullview.AbPullListView;
+
+import android.content.SharedPreferences;
+import android.os.Bundle;
+import android.os.Handler;
+import android.os.Message;
+import android.support.v4.app.Fragment;
+import android.util.Log;
+import android.view.LayoutInflater;
+import android.view.View;
+import android.view.ViewGroup;
+import android.widget.ExpandableListView;
+import android.widget.ExpandableListView.OnChildClickListener;
+/**
+ * 管理员界面中管理员可进行管理的部门及成员
+ *@author zhou
+ *2014/10/18
+ */
+public class AdminDeptMemberFragment extends Fragment{
+	private static final String TAG="AdminDeptMember";
+	private ExpandableListView expandableList;
+	private AdminMemberExpandableListAdapter adapter;
+	private List<SessionInfo> deptList=new ArrayList<SessionInfo>();
+	private Handler load_student_handler;
+	private String PREFS_NAME="org.javatribe.courseSystem";
+	public View onCreateView(LayoutInflater inflater,ViewGroup container,Bundle savedInstanceState){
+		View rootView=inflater.inflate(R.layout.fragment_admin_org_member,container,false);
+		expandableList=(ExpandableListView)rootView.findViewById(R.id.faom_el_org_member);
+		initData();
+		adapter=new AdminMemberExpandableListAdapter(getActivity(),deptList);
+		expandableList.setAdapter(adapter);
+		expandableList.setOnChildClickListener(new OnChildClickListener(){
+         //若点中某个item项则会进行界面跳转，显示该生的具体信息
+			@Override
+			public boolean onChildClick(ExpandableListView parent, View v,
+					int groupPosition, int childPosition, long id) {
+				// TODO Auto-generated method stub
+				PersonInfo choose_person=(PersonInfo)adapter.getChild(groupPosition,childPosition);
+				Bundle bundle=new Bundle();
+				String choose_person_name=choose_person.getName();
+				bundle.putString("name", choose_person_name);
+				bundle.putString("no", choose_person.getId());
+				bundle.putInt("image_power",choose_person.getImage_power());
+				bundle.putString("tele_short", choose_person.getTele_short());
+				bundle.putString("tele_long", choose_person.getTele_long());
+				bundle.putString("dept", choose_person.getDept());
+				
+				if(choose_person.getDept().equals("未设置组")){
+					AdminOrgMemberOnePersonIndoWithNoSessionFragment ncpif=new AdminOrgMemberOnePersonIndoWithNoSessionFragment();
+					ncpif.setArguments(bundle);
+					getActivity().getSupportFragmentManager().beginTransaction().replace(R.id.content_frame,ncpif).addToBackStack(null).commit();
+				}
+				else{
+					AdminOrgMemberOnePersonInfoWithSessionFragment ncpif=new AdminOrgMemberOnePersonInfoWithSessionFragment();
+					ncpif.setArguments(bundle);
+					getActivity().getSupportFragmentManager().beginTransaction().replace(R.id.content_frame,ncpif).addToBackStack(null).commit();
+				}
+				return false;
+			}
+			
+		});
+		return rootView;
+		
+		
+	}
+	private void initData() {
+		// TODO Auto-generated method stub
+//		List<PersonInfo> list1=new ArrayList<PersonInfo>();
+//		list1.add(new PersonInfo("121542216","林凤文",R.drawable.admin_power,"622316","13760742216","学习部"));
+//		list1.add(new PersonInfo("121542135","周露颖",R.drawable.stu_power,"661649","13760741649","学习部"));
+//		list1.add(new PersonInfo("121542302","陈尾华",R.drawable.stu_power,"651234","18672341234","学习部"));
+//		
+//		DepartmentItem deptItem1=new DepartmentItem("学习部","学习部",list1);
+//		deptList.add(deptItem1);
+//		
+//		List<PersonInfo> list2=new ArrayList<PersonInfo>();
+//		list2.add(new PersonInfo("121542132","张碧茜",R.drawable.admin_power,"18676233369","613369","秘书部"));
+//		list2.add(new PersonInfo("121544123","文小韩",R.drawable.stu_power,"18676233344","613344","秘书部"));
+//		
+//		DepartmentItem deptItem2=new DepartmentItem("秘书部","秘书部",list2);
+//		deptList.add(deptItem2);
+//		
+//		List<PersonInfo> list3=new ArrayList<PersonInfo>();
+//		list3.add(new PersonInfo("121542113","林春燕",R.drawable.admin_power,"18676239900","619900","生活部"));
+//		list3.add(new PersonInfo("121542111","黄贝贝",R.drawable.stu_power,"18676236699","666699","生活部"));
+//		
+//		DepartmentItem deptItem3=new DepartmentItem("生活部","生活部",list3);
+//		deptList.add(deptItem3);
+//		
+//		
+//		List<PersonInfo> list4=new ArrayList<PersonInfo>();
+//		list4.add(new PersonInfo("1315421","翁笑燕",R.drawable.stu_power,"18676236699","612399","未设置组"));
+//		list4.add(new PersonInfo("1315422","林柯颖",R.drawable.stu_power,"18676236699","61111","未设置组"));
+//		list4.add(new PersonInfo("1315423","卢浩",R.drawable.stu_power,"18676236699","612399","未设置组"));
+//		
+//		DepartmentItem deptItem4=new DepartmentItem("未设置组","未设置组",list4);
+//		deptList.add(deptItem4);
+		Thread thread=new Thread("LoadStudentByOrgId"){
+			public void run(){
+				Message message=load_student_handler.obtainMessage();
+				String result;
+				try{
+					String url=Constant.BASE_URL+"/"+Constant.NAMESPACE_ADMIN_STU_ORG_SESSION+"/"+Constant.ADMIN_STU_ORG_SESSION_LOAD_STUDENT_BY_ORGID_ACTION;
+					SharedPreferences setting=getActivity().getSharedPreferences(PREFS_NAME, 0);  //SharedPreferences读取数据
+	    			final int orgId=setting.getInt("adminOrgId",0);
+	    			Map<String,String> params=new HashMap<String,String>();
+	    			params.put("orgId", orgId+"");
+	    			result=GetDataWithJson.getDataWithJsonViaSimpleData(url, params);
+	    			Log.i(TAG,"RESULT="+result);
+				}
+				catch(Exception e){
+					e.printStackTrace();
+				}
+			}
+		};
+		thread.start();
+	}
+
+
+	}
+
+
+
+
